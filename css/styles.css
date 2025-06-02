@@ -10,7 +10,7 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #e0a2d5;
   color: #333;
   padding-top: 60px; /* leave space for fixed nav */
 }
@@ -21,8 +21,8 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #004080;
-  color: white;
+  background-color: #20a687;
+  color: rgb(0, 0, 0);
   height: 60px;
   display: flex;
   align-items: center;
@@ -63,7 +63,7 @@ nav a:hover {
 /* Section headings */
 h1, h2 {
   margin-bottom: 10px;
-  color: #004080;
+  color: #0d6d83;
 }
 
 /* Paragraphs */
