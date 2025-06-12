@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Notes | Saheb’s Academic Site</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/styles.css"/>
 </head>
-<button class="toggle-btn">Toggle Theme</button>
-<script src="js/theme-toggle.js"></script>
-
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research &amp; Publications</a></li>
-      <li><a href="notes.html">Notes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Notes</h1>
-    <p>
-      Here you’ll find my lecture notes on topics like topology,
-      metric spaces, and hypothesis testing for CSIR-NET preparation.
-    </p>
-    <ul>
-      <li><a href="notes/topology-notes.pdf" target="_blank">Topology Notes (PDF)</a></li>
-      <li><a href="notes/metric-spaces-notes.pdf" target="_blank">Metric Spaces Notes (PDF)</a></li>
-      <!-- Add more note links or embedded Markdown here -->
-    </ul>
+  <header class="site-header">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research &amp; Publications</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- e.g. your photo/links -->
+    </aside>
+    <main class="content">
+      <h1>Notes</h1>
+      <p>Here you’ll find…</p>
+      <ul>
+        <li><a href="notes/topology-notes.pdf" target="_blank">Topology Notes (PDF)</a></li>
+        <li><a href="notes/metric-spaces-notes.pdf" target="_blank">Metric Spaces Notes (PDF)</a></li>
+      </ul>
+    </main>
   </div>
 
   <footer>
     &copy; 2025 Saheb. All rights reserved.
   </footer>
+
+  <button class="toggle-btn">Toggle Theme</button>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
