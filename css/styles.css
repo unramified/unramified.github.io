@@ -1,4 +1,125 @@
 /* css/styles.css */
+/* 1. RESET & BASE */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background: #fafafa;
+  color: #222;
+}
+a {
+  color: #006699;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+ul {
+  list-style: none;
+}
+/* 2. THEME VARIABLES */
+:root {
+  --bg: #fafafa;
+  --text: #222;
+  --accent: #006699;
+  --muted: #555;
+  --light: #fff;
+  --space: 1rem;
+  --radius: 8px;
+  --font: system-ui, sans-serif;
+}
+/* 3. GRID LAYOUT */
+.layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: var(--space);
+  padding: var(--space);
+}
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+.sidebar {
+  background: var(--light);
+  padding: var(--space);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.content {
+  padding: var(--space);
+}
+/* 4. HEADER & NAV */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: var(--light);
+  padding: var(--space);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+.nav {
+  display: flex;
+  gap: var(--space);
+  justify-content: center;
+}
+.nav a {
+  padding: 0.5em 1em;
+  border-radius: var(--radius);
+  transition: background .2s;
+}
+.nav a:hover {
+  background: var(--accent);
+  color: var(--light);
+}
+/* 5. TYPOGRAPHY */
+h1, h2, h3, h4 {
+  margin-bottom: calc(var(--space) / 2);
+  font-weight: 600;
+  line-height: 1.2;
+}
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+p, li {
+  margin-bottom: var(--space);
+  color: var(--muted);
+}
+/* 6. CONTENT CARDS */
+.card {
+  background: var(--light);
+  border-radius: var(--radius);
+  padding: var(--space);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  margin-bottom: var(--space);
+}
+/* 7. TOGGLE BUTTON */
+.toggle-btn {
+  position: fixed;
+  bottom: var(--space);
+  right: var(--space);
+  background: var(--accent);
+  color: var(--light);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+
+
+
+
+
 
 /* Reset default margins/padding */
 * {
