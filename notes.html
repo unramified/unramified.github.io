@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notes | Saheb’s Academic Site</title>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/styles.css" />
   <link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-  rel="stylesheet" />
-
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet" />
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="cv.html">CV</a></li>
         <li><a href="research.html">Research &amp; Publications</a></li>
-        <li><a href="notes.html">Notes</a></li>
+        <li><a href="notes.html" class="active">Notes</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
@@ -27,15 +26,33 @@
 
   <div class="layout">
     <aside class="sidebar">
-      <!-- e.g. your photo/links -->
+      <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
+      <p>Download my lecture notes</p>
+      <ul class="sidebar-links">
+        <li><a href="#topology">Topology Notes</a></li>
+        <li><a href="#metric-spaces">Metric Spaces Notes</a></li>
+      </ul>
     </aside>
+
     <main class="content">
       <h1>Notes</h1>
-      <p>Here you’ll find…</p>
-      <ul>
-        <li><a href="notes/topology-notes.pdf" target="_blank">Topology Notes (PDF)</a></li>
-        <li><a href="notes/metric-spaces-notes.pdf" target="_blank">Metric Spaces Notes (PDF)</a></li>
-      </ul>
+      <p>Click the links below to view or download the PDFs:</p>
+      <section id="topology">
+        <h2>Topology Notes</h2>
+        <p>
+          <a href="notes/topology-notes.pdf" target="_blank" download>
+            &raquo; Topology Notes (PDF)
+          </a>
+        </p>
+      </section>
+      <section id="metric-spaces">
+        <h2>Metric Spaces Notes</h2>
+        <p>
+          <a href="notes/metric-spaces-notes.pdf" target="_blank" download>
+            &raquo; Metric Spaces Notes (PDF)
+          </a>
+        </p>
+      </section>
     </main>
   </div>
 
