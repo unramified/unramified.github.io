@@ -6,36 +6,45 @@
   <title>Gallery | Saheb’s Academic Site</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-
-
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research &amp; Publications</a></li>
-      <li><a href="notes.html">Notes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Gallery</h1>
-    <p>Below are some snapshots from conferences, seminars, and research sessions:</p>
-    <div class="gallery-grid">
-      <img src="assets/images/conference1.jpg" alt="At Conference 2024" />
-      <img src="assets/images/blackboard.jpg" alt="Working on blackboard" />
-      <img src="assets/images/seminar.jpg" alt="Presenting at a seminar" />
-      <!-- Add more <img> tags as needed -->
-    </div>
+  <header class="site-header">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research &amp; Publications</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- Optional photo, links, or quick bio -->
+      <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
+      <p>Moments from conferences & seminars</p>
+    </aside>
+
+    <main class="content">
+      <h1>Gallery</h1>
+      <p>Below are some snapshots from conferences, seminars, and research sessions:</p>
+      <div class="gallery-grid">
+        <img src="assets/images/conference1.jpg" alt="At Conference 2024" />
+        <img src="assets/images/blackboard.jpg" alt="Working on blackboard" />
+        <img src="assets/images/seminar.jpg" alt="Presenting at a seminar" />
+        <!-- Add more <img> tags as needed -->
+      </div>
+    </main>
   </div>
 
   <footer>
     &copy; 2025 Saheb. All rights reserved.
   </footer>
+
   <button class="toggle-btn">Toggle Theme</button>
-<script src="js/theme-toggle.js"></script>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>

@@ -4,39 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV | Saheb’s Academic Site</title>
-  <!-- Link to your shared CSS -->
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-
-
 <body>
-  <!-- Paste the navigation snippet here -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research &amp; Publications</a></li>
-      <li><a href="notes.html">Notes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Curriculum Vitae</h1>
-    <p>
-      You can download my CV:  
-      <a href="assets/files/CV_Saheb_Kumar.pdf" target="_blank">
-        View PDF
-      </a>  
-      (PDF will open in a new tab).
-    </p>
+  <header class="site-header">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research &amp; Publications</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- Optional photo, quick bio or links -->
+      <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
+      <p>Download or view my CV</p>
+    </aside>
+
+    <main class="content">
+      <h1>Curriculum Vitae</h1>
+      <p>
+        You can download my CV here:
+        <a href="assets/files/CV_Saheb_Kumar.pdf" target="_blank">
+          View PDF
+        </a>
+      </p>
+    </main>
   </div>
 
   <footer>
     &copy; 2025 Saheb. All rights reserved.
   </footer>
+
   <button class="toggle-btn">Toggle Theme</button>
-<script src="js/theme-toggle.js"></script>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
