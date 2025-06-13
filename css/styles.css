@@ -67,6 +67,16 @@ img { max-width: 100%; display: block; }
   padding: var(--space);
 }
 
+/* Profile photo styling */
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: var(--space);
+  box-shadow: var(--shadow);
+}
+
 /* 4. HEADER & NAV */
 .site-header {
   position: sticky;
@@ -103,6 +113,16 @@ h1 { font-size: 2.25rem; }
 h2 { font-size: 1.75rem; }
 p, li { margin-bottom: var(--space); color: var(--muted); }
 
+/* Accent link style */
+.accent-link {
+  color: var(--accent);
+  font-weight: 500;
+}
+.accent-link:hover {
+  color: var(--accent-dark);
+  text-decoration: underline;
+}
+
 /* 6. CARDS & GRID */
 .card {
   background: var(--light);
@@ -115,6 +135,32 @@ p, li { margin-bottom: var(--space); color: var(--muted); }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: var(--space);
+}
+.gallery-grid figure {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+.gallery-grid figure img {
+  transition: transform 0.3s;
+}
+.gallery-grid figure:hover img {
+  transform: scale(1.05);
+}
+.gallery-grid figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 0.5rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-grid figure:hover figcaption {
+  opacity: 1;
 }
 
 /* 7. TOGGLE BUTTON */
@@ -135,11 +181,13 @@ p, li { margin-bottom: var(--space); color: var(--muted); }
   background: var(--accent-dark);
 }
 
-/* 8. CONTAINER (fallback pages) */
-.container {
-  max-width: 1024px;
-  margin: 2rem auto;
-  padding: 0 var(--space);
+/* 8. CONTACT LIST */
+.contact-list li {
+  margin-bottom: var(--space);
+}
+.contact-list li i {
+  margin-right: 0.5em;
+  color: var(--accent);
 }
 
 /* 9. FOOTER */

@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notes | Saheb’s Academic Site</title>
+  <title>CV | Saheb Mohapatra</title>
+  <meta name="description" content="Academic CV of Saheb Mohapatra, including education, research, and publications." />
+  <meta name="author" content="Saheb Mohapatra" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html" class="active">CV</a></li>
         <li><a href="research.html">Research &amp; Publications</a></li>
         <li><a href="notes.html">Notes</a></li>
         <li><a href="gallery.html">Gallery</a></li>
@@ -26,27 +27,49 @@
 
   <div class="layout">
     <aside class="sidebar">
-      <!-- Optional photo, quick bio or links -->
       <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Download or view my CV</p>
+      <p><strong>M.Sc. Mathematics, ISI Kolkata</strong><br>(2023–2025)</p>
+      <p><strong>B.Sc. Mathematics, XYZ University</strong><br>(2020–2023)</p>
+      <p><strong>Incoming Ph.D., Durham University</strong><br>(2025–present, MSCA COGENT)</p>
+      <p><a href="assets/files/CV_Saheb.pdf" target="_blank" class="accent-link"><i class="fa fa-download"></i> Download CV (PDF)</a></p>
     </aside>
 
     <main class="content">
       <h1>Curriculum Vitae</h1>
-      <p>
-        You can download my CV here:
-        <a href="assets/files/CV_Saheb.pdf" target="_blank">
-          View PDF
-        </a>
-      </p>
+
+      <h2>Education</h2>
+      <ul>
+        <li><strong>Durham University</strong> – Ph.D. Student in Mathematics (2025–present, MSCA COGENT scholar).</li>
+        <li><strong>Indian Statistical Institute, Kolkata</strong> – M.Sc. in Mathematics (2023–2025).</li>
+        <li><strong>XYZ University</strong> – B.Sc. in Mathematics (2020–2023).</li>
+      </ul>
+
+      <h2>Research Experience</h2>
+      <ul>
+        <li>Master’s Thesis: “Unramified Milnor–Witt K-theory and the Scissors Congruence Group” (2025).</li>
+        <li>Master’s Project: Scissors congruence in $\mathbb{A}^1$-homotopy theory (2024).</li>
+      </ul>
+
+      <h2>Publications</h2>
+      <ul>
+        <li><a href="https://doi.org/10.xxxx/xxxxx" target="_blank">Saheb Mohapatra, “Unramified Milnor–Witt K-theory and the Scissors Congruence Group,” <em>Journal of K-Theory</em> (2025).</a></li>
+        <!-- Add more publications as needed -->
+      </ul>
+
+      <h2>Skills &amp; Tools</h2>
+      <ul>
+        <li>Programming: Python, R, SageMath.</li>
+        <li>Mathematical Software: LaTeX, Mathematica, Overleaf.</li>
+        <li>Others: Git, Markdown, UNIX/Linux.</li>
+      </ul>
     </main>
   </div>
 
   <footer>
-    &copy; 2025 Saheb. All rights reserved.
+    &copy; 2025 Saheb Mohapatra. All rights reserved.
   </footer>
 
-  <button class="toggle-btn">Toggle Theme</button>
+  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
   <script src="js/theme-toggle.js"></script>
 </body>
 </html>

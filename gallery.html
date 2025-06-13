@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Notes | Saheb’s Academic Site</title>
+  <title>Gallery | Saheb Mohapatra</title>
+  <meta name="description" content="Photo gallery of Saheb Mohapatra at conferences, seminars, and research events." />
+  <meta name="author" content="Saheb Mohapatra" />
   <link rel="stylesheet" href="css/styles.css" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
-    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <header class="site-header">
     <nav class="nav">
       <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="cv.html">CV</a></li>
         <li><a href="research.html">Research &amp; Publications</a></li>
         <li><a href="notes.html">Notes</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html" class="active">Gallery</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -26,28 +27,36 @@
 
   <div class="layout">
     <aside class="sidebar">
-      <!-- Optional photo, links, or quick bio -->
       <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Moments from conferences & seminars</p>
+      <p>Moments from conferences &amp; seminars</p>
     </aside>
 
     <main class="content">
       <h1>Gallery</h1>
       <p>Below are some snapshots from conferences, seminars, and research sessions:</p>
       <div class="gallery-grid">
-        <img src="assets/images/conference1.jpg" alt="At Conference 2024" />
-        <img src="assets/images/blackboard.jpg" alt="Working on blackboard" />
-        <img src="assets/images/seminar.jpg" alt="Presenting at a seminar" />
-        <!-- Add more <img> tags as needed -->
+        <figure>
+          <img src="assets/images/conference1.jpg" alt="Saheb at a conference, 2024" loading="lazy" />
+          <figcaption>Conference 2024</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/blackboard.jpg" alt="Saheb working on a blackboard" loading="lazy" />
+          <figcaption>Research Session</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/images/seminar.jpg" alt="Saheb presenting at a seminar" loading="lazy" />
+          <figcaption>Seminar Talk</figcaption>
+        </figure>
+        <!-- Add more images as needed -->
       </div>
     </main>
   </div>
 
   <footer>
-    &copy; 2025 Saheb. All rights reserved.
+    &copy; 2025 Saheb Mohapatra. All rights reserved.
   </footer>
 
-  <button class="toggle-btn">Toggle Theme</button>
+  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
   <script src="js/theme-toggle.js"></script>
 </body>
 </html>
