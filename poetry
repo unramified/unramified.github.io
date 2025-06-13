@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery | Saheb Mohapatra</title>
-  <meta name="description" content="Photo gallery of Saheb Mohapatra at conferences, seminars, and research events." />
+  <title>Poetry | Saheb Mohapatra</title>
+  <meta name="description" content="Poetry by Saheb Mohapatra." />
   <meta name="author" content="Saheb Mohapatra" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -29,27 +29,32 @@
   <div class="layout">
     <aside class="sidebar">
       <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Moments from conferences &amp; seminars</p>
+      <p>Here lies my creative world.</p>
     </aside>
 
     <main class="content">
-      <h1>Gallery</h1>
-      <p>Below are some snapshots from conferences, seminars, and research sessions:</p>
-      <div class="gallery-grid">
-        <figure>
-          <img src="assets/images/conference1.jpg" alt="Saheb at a conference, 2024" loading="lazy" />
-          <figcaption>Conference 2024</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/images/blackboard.jpg" alt="Saheb working on a blackboard" loading="lazy" />
-          <figcaption>Research Session</figcaption>
-        </figure>
-        <figure>
-          <img src="assets/images/seminar.jpg" alt="Saheb presenting at a seminar" loading="lazy" />
-          <figcaption>Seminar Talk</figcaption>
-        </figure>
-        <!-- Add more images as needed -->
+      <h1>Poetry</h1>
+      <div class="card">
+        <h2>Fleeting</h2>
+        <p>
+          Moments, like rivers, rush and fade,<br>
+          Leaving whispers where memories played.<br>
+          A breath, a thought, a step, a sigh—<br>
+          All vanish beneath the endless sky.
+        </p>
       </div>
+
+      <div class="card">
+        <h2>Abstract Horizon</h2>
+        <p>
+          What is truth if not a shape,<br>
+          That shifts with light and thought's escape?<br>
+          Words may frame what can't be caught,<br>
+          And silence echo all we've sought.
+        </p>
+      </div>
+
+      <!-- Add more poems here as needed -->
     </main>
   </div>
 
