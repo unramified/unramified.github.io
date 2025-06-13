@@ -1,107 +1,122 @@
 /* css/styles.css */
 /* 1. RESET & BASE */
-*,
-*::before,
-*::after {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
 }
 body {
-  font-family: system-ui, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
   line-height: 1.6;
-  background: #fafafa;
-  color: #222;
+  transition: background .3s, color .3s;
 }
 a {
-  color: #006699;
+  color: var(--accent);
   text-decoration: none;
+  transition: color .2s;
 }
-img {
-  max-width: 100%;
-  display: block;
+a:hover {
+  color: var(--accent-dark);
 }
-ul {
-  list-style: none;
-}
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
 /* 2. THEME VARIABLES */
 :root {
-  --bg: #fafafa;
-  --text: #222;
-  --accent: #006699;
-  --muted: #555;
-  --light: #fff;
-  --space: 1rem;
-  --radius: 8px;
-  --font: system-ui, sans-serif;
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --accent: #4f46e5;
+  --accent-dark: #4338ca;
+  --muted: #555555;
+  --light: #f3f4f6;
+  --radius: 12px;
+  --space: 1.25rem;
+  --shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+[data-theme='dark'] {
+  --bg: #1f2937;
+  --text: #f9fafb;
+  --accent: #6366f1;
+  --accent-dark: #4f46e5;
+  --muted: #9ca3af;
+  --light: #374151;
+}
+
 /* 3. GRID LAYOUT */
 .layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 280px 1fr;
   gap: var(--space);
   padding: var(--space);
 }
 @media (max-width: 768px) {
-  .layout {
-    grid-template-columns: 1fr;
-  }
+  .layout { grid-template-columns: 1fr; }
 }
 .sidebar {
   background: var(--light);
   padding: var(--space);
   border-radius: var(--radius);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
 }
 .content {
   padding: var(--space);
 }
+
 /* 4. HEADER & NAV */
 .site-header {
   position: sticky;
   top: 0;
   background: var(--light);
-  padding: var(--space);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: var(--space) 0;
+  box-shadow: var(--shadow);
   z-index: 100;
 }
-.nav {
+.nav ul {
   display: flex;
-  gap: var(--space);
   justify-content: center;
+  gap: var(--space);
 }
 .nav a {
   padding: 0.5em 1em;
   border-radius: var(--radius);
-  transition: background .2s;
+  font-weight: 500;
 }
-.nav a:hover {
+.nav a:hover,
+.nav a.active {
   background: var(--accent);
   color: var(--light);
 }
+
 /* 5. TYPOGRAPHY */
-h1, h2, h3, h4 {
+h1, h2, h3 {
   margin-bottom: calc(var(--space) / 2);
   font-weight: 600;
-  line-height: 1.2;
+  line-height: 1.3;
+  color: var(--text);
 }
-h1 { font-size: 2rem; }
-h2 { font-size: 1.5rem; }
-p, li {
-  margin-bottom: var(--space);
-  color: var(--muted);
-}
-/* 6. CONTENT CARDS */
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.75rem; }
+p, li { margin-bottom: var(--space); color: var(--muted); }
+
+/* 6. CARDS & GRID */
 .card {
   background: var(--light);
   border-radius: var(--radius);
   padding: var(--space);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow);
   margin-bottom: var(--space);
 }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space);
+}
+
 /* 7. TOGGLE BUTTON */
 .toggle-btn {
   position: fixed;
@@ -110,92 +125,27 @@ p, li {
   background: var(--accent);
   color: var(--light);
   border: none;
-  padding: 0.5em 1em;
+  padding: 0.75em 1.25em;
   border-radius: var(--radius);
   cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background .2s;
+}
+.toggle-btn:hover {
+  background: var(--accent-dark);
 }
 
-
-
-
-
-
-
-/* Reset default margins/padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #efe5ed;
-  color: #333;
-  padding-top: 60px; /* leave space for fixed nav */
-}
-
-/* Fixed top navigation bar */
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #aeb9b7;
-  color: rgb(0, 0, 0);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  padding: 0 20px;
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 16px;
-}
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* Container for page content */
+/* 8. CONTAINER (fallback pages) */
 .container {
-  max-width: 900px;
-  margin: 20px auto;
-  padding: 0 20px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 1024px;
+  margin: 2rem auto;
+  padding: 0 var(--space);
 }
 
-/* Section headings */
-h1, h2 {
-  margin-bottom: 10px;
-  color: #0d6d83;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 15px;
-}
-
-/* Footer */
+/* 9. FOOTER */
 footer {
   text-align: center;
-  margin: 40px 0;
-  color: #666;
-  font-size: 14px;
+  padding: var(--space) 0;
+  color: var(--muted);
+  font-size: 0.875rem;
 }
