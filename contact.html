@@ -7,30 +7,43 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <!-- Navigation -->
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="cv.html">CV</a></li>
-      <li><a href="research.html">Research &amp; Publications</a></li>
-      <li><a href="notes.html">Notes</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
-  <div class="container">
-    <h1>Contact</h1>
-    <p>Feel free to reach out:</p>
-    <ul>
-      <li>Email: <a href="mailto:saheb.mohapatra.math@gmail.com">saheb.mohapatra.math@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/unramified" target="_blank">@unramified</a></li>
-      <li>LinkedIn: <a href="https://www.linkedin.com/in/saheb-mohapatra-5257aa2b1/" target="_blank">linkedin.com/in/saheb-mohapatra-5257aa2b1/</a></li>
-    </ul>
+  <header class="site-header">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="research.html">Research &amp; Publications</a></li>
+        <li><a href="notes.html">Notes</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <!-- Optional photo, links, or quick bio -->
+      <img src="images/profile.jpg" alt="Saheb Mohapatra" class="profile-photo" />
+      <p>Get in touch with me</p>
+    </aside>
+
+    <main class="content">
+      <h1>Contact</h1>
+      <p>Feel free to reach out:</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:saheb.mohapatra.math@gmail.com">saheb.mohapatra.math@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/unramified" target="_blank">@unramified</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/saheb-mohapatra-5257aa2b1/" target="_blank">linkedin.com/in/saheb-mohapatra-5257aa2b1/</a></li>
+      </ul>
+    </main>
   </div>
 
   <footer>
     &copy; 2025 Saheb. All rights reserved.
   </footer>
+
+  <button class="toggle-btn">Toggle Theme</button>
+  <script src="js/theme-toggle.js"></script>
 </body>
 </html>
