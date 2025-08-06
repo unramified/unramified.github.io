@@ -6,57 +6,70 @@
   <title>Poetry | Saheb Mohapatra</title>
   <meta name="description" content="Poetry by Saheb Mohapatra." />
   <meta name="author" content="Saheb Mohapatra" />
+  <meta property="og:title" content="Poetry | Saheb Mohapatra" />
+  <meta property="og:description" content="Creative poetry by Saheb Mohapatra." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/saheb-final.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/poetry.html" />
+  <meta name="theme-color" content="#0077cc" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <header class="site-header">
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="research.html">Research &amp; Publications</a></li>
-        <li><a href="notes.html">Notes</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="poetry.html" class="active">Poetry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Home">
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <span class="logo-text">Saheb Mohapatra</span>
+      </a>
+      <nav class="nav" aria-label="Main menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="poetry.html" class="active">Poetry</a></li>
+          <li><a href="misc.html">Misc</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" aria-label="Toggle dark/light theme"><i class="fa fa-moon"></i></button>
+    </div>
   </header>
 
-  <div class="layout">
+  <main class="container">
     <aside class="sidebar">
-      <img src="images/saheb final.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Here lies my creative world.</p>
+      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
+      <p class="intro">Here lies my creative world.</p>
     </aside>
 
-    <main class="content">
+    <section class="content">
       <h1>Poetry</h1>
       <div class="card">
         <h2>Wake up</h2>
-        <p>
-          tbd
-        </p>
+        <p>tbd</p>
       </div>
-
       <div class="card">
         <h2>A destitute pond</h2>
-        <p>
-          tbd
-        </p>
+        <p>tbd</p>
       </div>
-
       <!-- Add more poems here as needed -->
-    </main>
-  </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Saheb Mohapatra. All rights reserved.
+    <div class="footer-inner">
+      <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+    </div>
   </footer>
 
-  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
   <script src="js/theme-toggle.js"></script>
 </body>
 </html>

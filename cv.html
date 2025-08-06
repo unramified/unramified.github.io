@@ -4,66 +4,80 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CV | Saheb Mohapatra</title>
-  <meta name="description" content="Academic CV of Saheb Mohapatra, including education, research, and publications." />
+  <meta name="description" content="Curriculum Vitae of Saheb Mohapatra, PhD student and mathematician specializing in algebraic K-theory." />
   <meta name="author" content="Saheb Mohapatra" />
+  <meta property="og:title" content="CV | Saheb Mohapatra" />
+  <meta property="og:description" content="Academic CV of Saheb Mohapatra, including education, research, and publications." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/saheb-final.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/cv.html" />
+  <meta name="theme-color" content="#0077cc" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
-  <script src="js/theme-toggle.js"></script>
-
   <header class="site-header">
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html" class="active">CV</a></li>
-        <li><a href="research.html">Research &amp; Publications</a></li>
-        <li><a href="notes.html">Notes</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="poetry.html">Poetry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Saheb Mohapatra homepage">
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <span class="logo-text">Saheb Mohapatra</span>
+      </a>
+      <nav class="nav" aria-label="Main menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html" class="active">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="poetry.html">Poetry</a></li>
+          <li><a href="misc.html">Misc</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" aria-label="Toggle dark/light theme">
+        <i class="fa fa-moon"></i>
+      </button>
+    </div>
   </header>
 
-  <div class="layout">
+  <main class="container">
     <aside class="sidebar">
-      <img src="images/saheb final.jpg" alt="Saheb Mohapatra" class="profile-photo" />
+      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
       <p><strong>M.Math, ISI Kolkata</strong><br>(2023–2025)</p>
       <p><strong>B.Math, ISI Bangalore</strong><br>(2020–2023)</p>
       <p><strong>Incoming Ph.D., Durham University</strong><br>(2025–present, MSCA COGENT)</p>
-      <p><a href="assets/files/CV_Saheb.pdf" target="_blank" class="accent-link"><i class="fa fa-download"></i> Download CV (PDF)</a></p>
+      <p><a href="assets/files/CV_Saheb.pdf" target="_blank" class="btn"><i class="fa fa-download"></i> Download CV (PDF)</a></p>
     </aside>
 
-    <main class="content">
+    <section class="content">
       <h1>Curriculum Vitae</h1>
 
       <h2>Education</h2>
       <ul>
-        <li><strong>Durham University</strong> – Ph.D. Student in Mathematics (2025–present, MSCA COGENT scholar).</li>
-        <li><strong>Indian Statistical Institute, Kolkata</strong> – M.Math (2023–2025), Grade: 97.35%.</li>
+        <li><strong>Durham University</strong> – Ph.D. Student in Mathematics (2025–present, MSCA COGENT scholar)</li>
+        <li><strong>Indian Statistical Institute, Kolkata</strong> – M.Math (2023–2025), Grade: 97.35%</li>
         <li><strong>Indian Statistical Institute, Bangalore</strong> – B.Math (Hons.) (2020–2023), Grade: 92.31%</li>
       </ul>
 
       <h2>Projects & Research</h2>
       <ul>
-        <li><strong>Master’s Thesis 2</strong>: “Unramified Milnor–Witt K-theory and the Scissors Congruence Group” (May, 2025). Supervisor: <a href="https://utsavchoudhury.weebly.com">Dr. Utsav Choudhury</a>, ISI Kolkata</li>
-        <li><strong>Master’s Thesis 1</strong>: Algebraic $K$-theory of rings (December, 2024). Supervisor: <a href="https://www.isical.ac.in/~mrinal">Prof. Mrinal Kanti Das</a>, ISI Kolkata</li>
-        <li><strong>Summer Student Program</strong>: Reading project on Algebraic and Topological K-theory (June, 2024). Supervisor: <a href="https://sites.google.com/view/rahul-gupta-math">Dr. Rahul Gupta</a>, Institute of Mathematical Sciences, Chennai [<a href="https://drive.google.com/file/d/11CEP5JaXkjUh_uJolxdabCwUZTycXi0-/view?usp=sharing">Certificate</a>]</li>
-        <li><strong>Reading Project</strong>: Suslin’s proof of Serre’s problem (December, 2023). Supervisor: <a href="https://www.isical.ac.in/~mrinal">Prof. Mrinal Kanti Das</a>, ISI Kolkata.</li>
-        <li><strong>Reading project</strong>: Mutually Unbiased Bases & Hadamard Matrices (June, 2023). Supervisor: Mr. Rakesh Kumar, ISI Kolkata.</li>
-        <li><strong>Visiting Students Research Programme (VSRP)</strong> (June, 2022). Supervisor: Dr. Vijaylaxmi Trivedi, TIFR Mumbai. [<a href="https://drive.google.com/file/d/1NbKTVeHFAaxbskqpcDnUN9bHppp6XrXM/view?usp=drivesdk">Certificate</a>]</li>
-        <li><strong>Reading Project</strong>: Introduction to Commutative Algebra and Algebraic Geometry (August, 2021). Math Club ISI Banglore <a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing">, Report</a>: Unique Euclidean Domains.</li>
-        <li><strong>Statistics Project</strong>: “Education in the era of COVID-19” (December, 2021). Supervisor: Dr. Rituparna Sen, ISI Bangalore. [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">Report</a>]</li>
+        <li><strong>Master’s Thesis 2</strong>: “Unramified Milnor–Witt K-theory and the Scissors Congruence Group” (May, 2025). Supervisor: <a href="https://utsavchoudhury.weebly.com" target="_blank">Dr. Utsav Choudhury</a>, ISI Kolkata</li>
+        <li><strong>Master’s Thesis 1</strong>: Algebraic $K$-theory of rings (December, 2024). Supervisor: <a href="https://www.isical.ac.in/~mrinal" target="_blank">Prof. Mrinal Kanti Das</a>, ISI Kolkata</li>
+        <li><strong>Summer Student Program</strong>: Reading project on Algebraic and Topological K-theory (June, 2024). Supervisor: <a href="https://sites.google.com/view/rahul-gupta-math" target="_blank">Dr. Rahul Gupta</a>, Institute of Mathematical Sciences, Chennai [<a href="https://drive.google.com/file/d/11CEP5JaXkjUh_uJolxdabCwUZTycXi0-/view?usp=sharing" target="_blank">Certificate</a>]</li>
+        <li><strong>Reading Project</strong>: Suslin’s proof of Serre’s problem (December, 2023). Supervisor: <a href="https://www.isical.ac.in/~mrinal" target="_blank">Prof. Mrinal Kanti Das</a>, ISI Kolkata</li>
+        <li><strong>Reading project</strong>: Mutually Unbiased Bases & Hadamard Matrices (June, 2023). Supervisor: Mr. Rakesh Kumar, ISI Kolkata</li>
+        <li><strong>Visiting Students Research Programme (VSRP)</strong> (June, 2022). Supervisor: Dr. Vijaylaxmi Trivedi, TIFR Mumbai. [<a href="https://drive.google.com/file/d/1NbKTVeHFAaxbskqpcDnUN9bHppp6XrXM/view?usp=drivesdk" target="_blank">Certificate</a>]</li>
+        <li><strong>Reading Project</strong>: Introduction to Commutative Algebra and Algebraic Geometry (August, 2021). Math Club ISI Bangalore [<a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing" target="_blank">Report</a>]: Unique Euclidean Domains</li>
+        <li><strong>Statistics Project</strong>: “Education in the era of COVID-19” (December, 2021). Supervisor: Dr. Rituparna Sen, ISI Bangalore [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf" target="_blank">Report</a>]</li>
       </ul>
 
       <h2>Achievements</h2>
@@ -76,31 +90,39 @@
         <li>Harishchandra Research Institute PhD fellowship, 2024 (did not accept)</li>
         <li>Kishore Vaigyanik Protsahan Yojana (KVPY) Fellow, IISc Bangalore (November 2018), Fellowship by Dept. of Science & Technology, Govt. of India (2020–2025)</li>
         <li>B.Math entrance test, Indian Statistical Institute, 2020, National Rank of 33</li>
-       </ul>
+      </ul>
 
       <h2>Talks Delivered</h2>
       <ul>
-        <li><strong>Scissors Congruence and Strongly $\mathbb{A}^{1}$-invariant sheaves</strong>, <a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html#:~:text=11/6/2025%20%3A%C2%A0%20Title%20%3A%C2%A0Scissors%20congruence%20and%20strongly%20A%5E1%2Dinvariant%20sheaves.%0A%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20%C2%A0%20Speaker%20%3A%20Saheb%20Mohapatra"> Algebraic Geometry seminar</a>, ISI Kolkata</li>
-        <li><strong>Lecture Series on Algebraic K-theory</strong>, ISI Kolkata (Aug 2024). [<a href="https://www.isical.ac.in/~statmath/abstract/69182-seminar_saheb-mohapatra_14.08.2024-16.08.2024.pdf" target="_blank">Abstract</a>]</li>
+        <li><strong>Scissors Congruence and Strongly $\mathbb{A}^{1}$-invariant sheaves</strong>, <a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html" target="_blank">Algebraic Geometry seminar</a>, ISI Kolkata</li>
+        <li><strong>Lecture Series on Algebraic K-theory</strong>, ISI Kolkata (Aug 2024) [<a href="https://www.isical.ac.in/~statmath/abstract/69182-seminar_saheb-mohapatra_14.08.2024-16.08.2024.pdf" target="_blank">Abstract</a>]
+        </li>
         <li><strong>Lectures on Complex Analysis</strong>, ISI Kolkata (2023)</li>
-        <li><strong>Conjugacy and Group Actions</strong>, ISI Bangalore (Dec 2021). [<a href="https://youtu.be/eoIGeWJTL2w" target="_blank">YouTube</a>]</li>
+        <li><strong>Conjugacy and Group Actions</strong>, ISI Bangalore (Dec 2021) [<a href="https://youtu.be/eoIGeWJTL2w" target="_blank">YouTube</a>]
+        </li>
       </ul>
 
       <h2>Other Activities & Skills</h2>
       <ul>
-        <li>Core Committee Member <a href="https://mathclubisik.github.io/members/ay_2024_25">,Math Club</a>, ISI Kolkata</li>
-        <li>Core Committee Member <a href="https://mathclubisib.github.io/members/#academic-year-2021-22">,Math Club</a>, ISI Kolkata</li>
-        <li>Completed Stanford’s ML Course on Coursera (Aug 2021) [<a href="https://coursera.org/share/7d53c3f34e9a55df2c8db00aa2b15a50">Certificate</a>]</li>
+        <li>Core Committee Member, <a href="https://mathclubisik.github.io/members/ay_2024_25" target="_blank">Math Club</a>, ISI Kolkata</li>
+        <li>Core Committee Member, <a href="https://mathclubisib.github.io/members/#academic-year-2021-22" target="_blank">Math Club</a>, ISI Kolkata</li>
+        <li>Completed Stanford’s ML Course on Coursera (Aug 2021) [<a href="https://coursera.org/share/7d53c3f34e9a55df2c8db00aa2b15a50" target="_blank">Certificate</a>]</li>
         <li>Programming: MATLAB, Python, C</li>
         <li>Working knowledge of LaTeX</li>
         <li>TOEFL Score: 117/120</li>
-        
       </ul>
-    </main>
-  </div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Saheb Mohapatra. All rights reserved.
+    <div class="footer-inner">
+      <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+    </div>
   </footer>
+
+  <script src="js/theme-toggle.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
 </body>
 </html>

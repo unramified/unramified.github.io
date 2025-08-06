@@ -1,45 +1,38 @@
-// js/theme-toggle.js
 const btn = document.querySelector('.toggle-btn');
 const root = document.documentElement;
+if (!btn) throw new Error('Theme toggle button not found');
 const icon = btn.querySelector('i');
 
-// Toggle handler: add/remove the attribute, update storage and icon
+// Set ARIA
+btn.setAttribute('role', 'switch');
+
+// Theme toggle with improved accessibility and animations
 btn.addEventListener('click', () => {
-  if (root.getAttribute('data-theme') === 'dark') {
-    // Switch to light
-    root.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'light');
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  } else {
-    // Switch to dark
-    root.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  }
+  const isDark = root.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+
+  root.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  // Update icon
+  icon.classList.remove('fa-sun', 'fa-moon');
+  icon.classList.add(newTheme === 'dark' ? 'fa-moon' : 'fa-sun');
+
+  // ARIA feedback
+  btn.setAttribute('aria-pressed', newTheme === 'dark');
+
+  // Animation feedback
+  icon.classList.add('icon-transition');
+  setTimeout(() => icon.classList.remove('icon-transition'), 300);
 });
 
-// On load: apply saved theme or OS preference, and set icon
+// On load: apply saved or preferred theme
 window.addEventListener('DOMContentLoaded', () => {
-  const saved = localStorage.getItem('theme');
-  if (saved === 'dark') {
-    root.setAttribute('data-theme', 'dark');
-    icon.classList.remove('fa-moon');
-    icon.classList.add('fa-sun');
-  } else if (saved === 'light') {
-    root.removeAttribute('data-theme');
-    icon.classList.remove('fa-sun');
-    icon.classList.add('fa-moon');
-  } else {
-    // No saved preference: respect OS setting
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      root.setAttribute('data-theme', 'dark');
-      icon.classList.remove('fa-moon');
-      icon.classList.add('fa-sun');
-    } else {
-      icon.classList.remove('fa-sun');
-      icon.classList.add('fa-moon');
-    }
-  }
+  const savedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const useDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+
+  root.setAttribute('data-theme', useDark ? 'dark' : 'light');
+  icon.classList.add(useDark ? 'fa-moon' : 'fa-sun');
+  btn.setAttribute('aria-pressed', useDark);
 });

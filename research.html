@@ -6,78 +6,100 @@
   <title>Research &amp; Publications | Saheb Mohapatra</title>
   <meta name="description" content="Research interests and publications of Saheb Mohapatra, focusing on algebraic K-theory and related fields." />
   <meta name="author" content="Saheb Mohapatra" />
+  <meta property="og:title" content="Research &amp; Publications | Saheb Mohapatra" />
+  <meta property="og:description" content="Research interests and publications of Saheb Mohapatra, focusing on algebraic K-theory." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/saheb-final.jpg" />
+  <meta property="og:url" content="https://yourdomain.com/research.html" />
+  <meta name="theme-color" content="#0077cc" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-  <!-- MathJax for LaTeX rendering -->
-  <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
-  </script>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-
   <header class="site-header">
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="research.html" class="active">Research &amp; Publications</a></li>
-        <li><a href="notes.html">Notes</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="poetry.html">Poetry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Home">
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <span class="logo-text">Saheb Mohapatra</span>
+      </a>
+      <nav class="nav" aria-label="Main menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="poetry.html">Poetry</a></li>
+          <li><a href="misc.html">Misc</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" aria-label="Toggle dark/light theme"><i class="fa fa-moon"></i></button>
+    </div>
   </header>
 
-  <div class="layout">
+  <main class="container">
     <aside class="sidebar">
-      <img src="images/saheb final.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Download my research papers</p>
-      <ul class="sidebar-links">
-        <li><a href="#interests">Research Interests</a></li>
-        <li><a href="#publications">Publications</a></li>
-      </ul>
+      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
+      <p class="intro">Research &amp; Publications</p>
+      <nav class="sidebar-links" aria-label="Sections">
+        <ul>
+          <li><a href="#interests">Research Interests</a></li>
+          <li><a href="#publications">Publications</a></li>
+        </ul>
+      </nav>
     </aside>
 
-    <main class="content">
+    <section class="content">
       <h1>Research &amp; Publications</h1>
-      <p>I am an incoming PhD student at Durham University (MSCA COGENT scholar) focusing on algebraic $K$-theory. My work so far has explored the relationship between scissors congruence groups and $\mathbb{A}^1$-homotopy theory.</p>
+      <p>I am an incoming PhD student at Durham University (MSCA COGENT scholar) focusing on algebraic <span class="math">\(K\)</span>-theory. My work so far has explored the relationship between scissors congruence groups and <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory.</p>
 
-      <section id="interests">
+      <article id="interests">
         <h2>Research Interests</h2>
         <ul>
-          <li>Algebraic $K$-theory</li>
-          <li>$\mathbb{A}^1$-homotopy theory</li>
-          <li>Scissors congruence group and Bloch group in the context of $\mathbb{A}^{1}$-homotopy theory</li>
-          <li>Milnor–Witt $K$-theory and quadratic forms</li>
+          <li>Algebraic <span class="math">\(K\)</span>-theory</li>
+          <li><span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
+          <li>Scissors congruence group and Bloch group in the context of <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
+          <li>Milnor–Witt <span class="math">\(K\)</span>-theory and quadratic forms</li>
         </ul>
-      </section>
+      </article>
 
-      <section id="publications">
+      <article id="publications">
         <h2>Publications</h2>
         <ul>
           <li>
-            <a href="https://doi.org/10.xxxx/xxxxx" target="_blank">Saheb Mohapatra, "Unramified Milnor–Witt $K$-theory and the Scissors Congruence Group," (2025)</a>
-            &nbsp;|&nbsp;
-            <a href="research/Master Thesis 2.pdf" target="_blank" download><i class="fa fa-download"></i> PDF</a>
+            <a href="https://doi.org/10.xxxx/xxxxx" target="_blank">Saheb Mohapatra, "Unramified Milnor–Witt <span class="math">\(K\)</span>-theory and the Scissors Congruence Group," (2025)</a>
+            <span class="separator">|</span>
+            <a href="research/Master Thesis 2.pdf" download><i class="fa fa-download"></i> PDF</a>
           </li>
-          <!-- Add more publications or preprints here -->
+          <!-- Add more publications here -->
         </ul>
-      </section>
-
-    </main>
-  </div>
+      </article>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Saheb Mohapatra. All rights reserved.
+    <div class="footer-inner">
+      <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+      <div class="social">
+        <a href="https://github.com/unramified" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/saheb-mohapatra" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
   <script src="js/theme-toggle.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
 </body>
 </html>

@@ -3,49 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home | Saheb Mohapatra</title>
-  <meta name="description" content="Academic homepage of Saheb Mohapatra, a mathematician specializing in algebraic K-theory, incoming PhD student at Durham University (MSCA COGENT 2025)." />
+  <title>Saheb Mohapatra | Mathematician</title>
+  <meta name="description" content="Academic homepage of Saheb Mohapatra, a world-class mathematician specializing in algebraic K-theory and A¹-homotopy theory." />
   <meta name="author" content="Saheb Mohapatra" />
+  <meta property="og:title" content="Saheb Mohapatra | Mathematician" />
+  <meta property="og:description" content="Research in Algebraic K-theory and A¹-homotopy theory" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/saheb-final.jpg" />
+  <meta property="og:url" content="https://yourdomain.com" />
+  <meta name="theme-color" content="#0077cc" />
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+
+  <!-- Google Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- KaTeX -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+
+  <!-- Main Styles -->
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-lJnPRyEd/x4b39ONz0xXkX0NiD3rHxOqTI22wnxCNm7IlB9SR0xzsAkTfsTHT5bGTzBQQWVEvfSjRDS5XM5Kug==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
-
   <header class="site-header">
-    <nav class="nav">
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="cv.html">CV</a></li>
-        <li><a href="research.html">Research &amp; Publications</a></li>
-        <li><a href="notes.html">Notes</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="poetry.html">Poetry</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="header-inner">
+      <a href="index.html" class="logo" aria-label="Saheb Mohapatra homepage">
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <span class="logo-text">Saheb Mohapatra</span>
+      </a>
+      <nav class="nav" aria-label="Main menu">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="notes.html">Notes</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="poetry.html">Poetry</a></li>
+          <li><a href="misc.html">Misc</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="toggle-btn" aria-label="Toggle dark/light theme">
+        <i class="fa fa-moon"></i>
+      </button>
+    </div>
   </header>
 
-  <div class="layout">
-    <aside class="sidebar">
-      <img src="images/saheb final.jpg" alt="Saheb Mohapatra" class="profile-photo" />
-      <p>Welcome to my academic homepage!</p>
-      <p>Incoming PhD student in Mathematics at Durham University (MSCA COGENT, 2025).</p>
-    </aside>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome!</h1>
+        <p>I’m <strong>Saheb Mohapatra</strong>, a mathematician specializing in <em>Algebraic K-theory</em> and <em>A<sup>1</sup>-homotopy theory</em>. Currently pursuing my PhD at Durham University under the MSCA COGENT network.</p>
+        <p><a href="cv.html" class="btn">Download CV</a><a href="research.html" class="btn-outline">My Research</a></p>
+      </div>
+      <div class="hero-image">
+        <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" loading="lazy" />
+      </div>
+    </section>
 
-    <main class="content">
-      <h1>Welcome</h1>
-      <p>Hi, I’m Saheb Mohapatra, a mathematician intersted in various topics in algebraic <em>K</em>-theory. Currently, my focus is on the scissors congruence group and many of its related groups in the light of <em>A</em><sup>1</sup>-homotopy theory.</p>
-      <p>I am an incoming PhD student at Durham University (2025–2028 ) supported by the Marie-Sklodowska-Curie Doctoral Network grant in Cohomology, Geometry and explicit number theory (COGENT).</p>
-      <p>Feel free to explore my <a href="research.html">research</a>, <a href="cv.html">CV</a>, or <a href="contact.html">get in touch</a>. The website is still in progress.</p>
-    </main>
-  </div>
+    <section class="highlights">
+      <article>
+        <i class="fas fa-graduation-cap fa-2x"></i>
+        <h3>PhD Student</h3>
+        <p>Durham University (2025–2028), MSCA COGENT Scholar</p>
+      </article>
+      <article>
+        <i class="fas fa-award fa-2x"></i>
+        <h3>Awards</h3>
+        <p>Marie Skłodowska-Curie Fellowship, NBHM Fellowship, CSIR-NET Rank 3</p>
+      </article>
+      <article>
+        <i class="fas fa-file-alt fa-2x"></i>
+        <h3>Publications</h3>
+        <p>Unramified Milnor–Witt K-theory and the Scissors Congruence Group (2025)</p>
+      </article>
+    </section>
+
+    <section class="featured-math">
+      <h2>Sample Equation</h2>
+      <div class="math-display">$$
+        K_n^M(F)/2 \cong H^n(F, \mu_2^{\otimes n})
+      $$</div>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Saheb Mohapatra. All rights reserved.
+    <div class="footer-inner">
+      <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+      <div class="social">
+        <a href="https://github.com/unramified" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/saheb-mohapatra" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
   </footer>
 
-  <button class="toggle-btn"><i class="fa fa-moon"></i></button>
   <script src="js/theme-toggle.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
 </body>
 </html>
