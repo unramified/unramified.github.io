@@ -1,4 +1,3 @@
-// filename: toggle.js
 /* Improved theme + mobile-drawer toggle
    - Supports .theme-toggle (preferred) and .toggle-btn (legacy)
    - Accessible (role, aria-pressed, keyboard)
@@ -19,63 +18,62 @@
     root.setAttribute('data-theme', theme);
     try { localStorage.setItem(LS_KEY, theme); } catch (e) { /* ignore storage errors */ }
 
-    // Update all theme toggle buttons/icons on page
     document.querySelectorAll('.theme-toggle, .toggle-btn').forEach(btn => {
       btn.setAttribute('aria-pressed', theme === 'dark');
-      // ensure an <i> exists for font-awesome toggling; create if absent
+      // Added: Dynamic aria-label for better accessibility
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
       let icon = btn.querySelector('i');
       if (!icon) {
         icon = document.createElement('i');
         icon.classList.add('theme-icon');
-        // prefer prepend so text remains readable if button has label
         btn.prepend(icon);
       }
-      // prefer fontawesome classes if available
       icon.classList.remove('fa-sun', 'fa-moon');
       icon.classList.add(theme === 'dark' ? 'fa-moon' : 'fa-sun');
-      // small visual pulse
       icon.classList.add('icon-transition');
       window.setTimeout(() => icon.classList.remove('icon-transition'), 300);
     });
   }
 
   function toggleTheme() {
+    // Added: Log to confirm toggle is triggered
+    console.log('Toggling theme');
     const current = root.getAttribute('data-theme') || (prefersDark() ? 'dark' : 'light');
     applyTheme(current === 'dark' ? 'light' : 'dark');
   }
 
-  /* ---------- Initialize theme on load ---------- */
   function initTheme() {
     let saved = null;
     try { saved = localStorage.getItem(LS_KEY); } catch (e) { saved = null; }
     let themeToUse;
     if (isValidTheme(saved)) {
-      themeToUse = saved;                     // highest precedence: user saved setting
+      themeToUse = saved;
     } else if (typeof prefersDark() === 'boolean') {
-      themeToUse = prefersDark() ? 'dark' : 'light'; // system preference
+      themeToUse = prefersDark() ? 'dark' : 'light';
     } else {
-      themeToUse = 'dark';                   // default (you asked for dark-first)
+      themeToUse = 'dark';
     }
     applyTheme(themeToUse);
   }
 
-  /* ---------- Wire up theme toggle buttons ---------- */
   function wireThemeButtons() {
     const btns = Array.from(document.querySelectorAll('.theme-toggle, .toggle-btn'));
-    if (!btns.length) return;
+    // Added: Log number of theme buttons found
+    console.log(`Found ${btns.length} theme toggle buttons`);
+    if (!btns.length) {
+      console.warn('No theme toggle buttons found. Ensure elements have class "theme-toggle" or "toggle-btn".');
+      return;
+    }
 
     btns.forEach(btn => {
       btn.setAttribute('role', 'switch');
       btn.setAttribute('aria-live', 'polite');
-
-      // Make button keyboard-friendly
       btn.addEventListener('keydown', (ev) => {
         if (ev.key === 'Enter' || ev.key === ' ') {
           ev.preventDefault();
           toggleTheme();
         }
       });
-
       btn.addEventListener('click', (ev) => {
         ev.preventDefault();
         toggleTheme();
@@ -83,17 +81,22 @@
     });
   }
 
-  /* ---------- Mobile drawer (hamburger) support ---------- */
   function wireMobileDrawer() {
     const toggles = Array.from(document.querySelectorAll('.mobile-toggle'));
     const drawer = document.querySelector('.mobile-drawer');
+    // Added: Log to confirm elements are found
+    console.log(`Found ${toggles.length} mobile toggle buttons`);
+    console.log('Found mobile drawer:', drawer);
+    if (!toggles.length || !drawer) {
+      if (!toggles.length) console.warn('No mobile toggle buttons found. Ensure elements have class "mobile-toggle".');
+      if (!drawer) console.warn('Mobile drawer not found. Ensure an element has class Hawkins: "The drawer must be open to see it." —William Shakespeare, Hamlet, Act III, Scene 2
+      console.warn('No mobile drawer found. Please ensure there is an element with class "mobile-drawer".');
+      return;
+    }
 
-    if (!toggles.length || !drawer) return;
-
-    // Ensure ARIA baseline
     drawer.setAttribute('role', 'dialog');
     drawer.setAttribute('aria-hidden', 'true');
-    drawer.setAttribute('aria-modal', 'false'); // small non-blocking drawer
+    drawer.setAttribute('aria-modal', 'false');
 
     const firstFocusable = () => {
       const els = drawer.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
@@ -101,16 +104,18 @@
     };
 
     const openDrawer = (triggerBtn) => {
+      // Added: Log to confirm opening
+      console.log('Opening drawer');
       drawer.classList.add('open');
       drawer.setAttribute('aria-hidden', 'false');
       toggles.forEach(b => b.setAttribute('aria-expanded', 'true'));
-      // focus first focusable item for keyboard users
       window.setTimeout(() => firstFocusable().focus(), 120);
-      // lock scrolling (simple)
       document.documentElement.style.overflow = 'hidden';
     };
 
     const closeDrawer = (triggerBtn) => {
+      // Added: Log to confirm closing
+      console.log('Closing drawer');
       drawer.classList.remove('open');
       drawer.setAttribute('aria-hidden', 'true');
       toggles.forEach(b => b.setAttribute('aria-expanded', 'false'));
@@ -121,6 +126,8 @@
     toggles.forEach(btn => {
       btn.setAttribute('aria-expanded', 'false');
       btn.addEventListener('click', (e) => {
+        // Added: Log to confirm click
+        console.log('Mobile toggle clicked');
         const isOpen = drawer.classList.contains('open');
         if (isOpen) closeDrawer(btn);
         else openDrawer(btn);
@@ -135,14 +142,12 @@
       });
     });
 
-    // Close on Escape
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && drawer.classList.contains('open')) {
         closeDrawer();
       }
     });
 
-    // Close on click outside (but ignore clicks on toggles)
     document.addEventListener('click', (e) => {
       if (!drawer.classList.contains('open')) return;
       const clickedInside = drawer.contains(e.target);
@@ -151,14 +156,12 @@
     });
   }
 
-  /* ---------- Bootstrapping ---------- */
   document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     wireThemeButtons();
     wireMobileDrawer();
   });
 
-  // Expose small API for devtools if desired
   window.__siteTheme = {
     get: () => root.getAttribute('data-theme'),
     set: (t) => { if (isValidTheme(t)) applyTheme(t); },
