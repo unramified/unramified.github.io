@@ -188,19 +188,34 @@ p, li { font-size: var(--text-size); color: var(--muted-text); margin-bottom: 0.
   .logo-text { font-size:0.95rem; }
 }
 
-/* Mobile drawer (hidden by default) */
+/* Mobile drawer (hidden by default) - slide in from right */
 .mobile-drawer {
-  position: fixed; inset: 68px 1rem auto 1rem; z-index: 80;
-  width: calc(100% - 2rem); max-width: 420px;
-  background: linear-gradient(180deg,var(--surface), rgba(255,255,255,0.01));
-  border-radius: 14px; padding: 1rem; box-shadow: var(--shadow);
-  transform: translateY(-12px) scale(0.99); opacity: 0; pointer-events: none;
-  transition: opacity var(--transition), transform var(--transition);
+  position: fixed;
+  top: 0;
+  right: -100%; /* start completely off screen */
+  height: 100%;
+  width: 260px; /* adjust to taste */
+  background: linear-gradient(180deg, var(--surface), rgba(255,255,255,0.01));
+  border-radius: 0; /* full height so no rounded corners needed */
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  opacity: 1; /* no fade, just slide */
+  pointer-events: none;
+  transition: right var(--transition);
+  z-index: 200;
 }
+
 .mobile-drawer.open {
-  transform: translateY(0) scale(1); opacity: 1; pointer-events: auto;
+  right: 0; /* slide into view */
+  pointer-events: auto;
 }
-.mobile-drawer .nav-links { display:flex; flex-direction:column; gap:0.6rem; }
+
+.mobile-drawer .nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
 
 /* -------------------------
    5. PAGE LAYOUT: sidebar + content
