@@ -22,14 +22,44 @@
 
   <!-- Site stylesheet (use styles.css provided earlier) -->
   <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- Page-local tweaks: smaller gallery images, tighter grid, caption sizing -->
   <style>
-    .logo-icon{font-weight:700}
-    /* footer social colors (page-local so no global stylesheet edit required) */
-    .footer-inner .social a.github { color: #24292e; }      /* GitHub dark */
-    .footer-inner .social a.linkedin { color: #0A66C2; }    /* LinkedIn blue */
-    .footer-inner .social a.instagram { color: #E1306C; }   /* Instagram pink-ish */
-    .footer-inner .social a.email { color: var(--accent); }/* accent for email */
-    .footer-inner .social a { margin-right: .6rem; font-size: 1.25rem; text-decoration:none; }
+    .logo-icon { font-weight:700; }
+
+    /* make gallery thumbnails medium/small (override global rules locally) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.6rem;
+      align-items: start;
+    }
+    .gallery-grid figure {
+      overflow: hidden;
+      border-radius: 10px;
+      margin: 0;
+      background: var(--muted-surface);
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .gallery-grid figure img {
+      width: 100%;
+      height: 160px;      /* medium thumbnail height — change to 120/140/180 if you want */
+      object-fit: cover;
+      display: block;
+      transition: transform 200ms ease;
+    }
+    .gallery-grid figure:hover img { transform: scale(1.03); }
+
+    .gallery-grid figcaption {
+      padding: 0.45rem 0.6rem;
+      font-size: 0.9rem;
+      color: var(--muted-text);
+      text-align: center;
+      background: linear-gradient(180deg, rgba(0,0,0,0.00), rgba(0,0,0,0.04));
+    }
+
+    /* ensure overlay lightbox still looks fine */
+    .card img[style] { max-height: 80vh; max-width: 100%; }
   </style>
 </head>
 <body>
@@ -68,7 +98,7 @@
         <a href="notes.html">Notes</a>
         <a href="gallery.html" class="active">Gallery</a>
         <a href="misc.html" >Miscellaneous</a>
-             </nav>
+      </nav>
     </div>
   </header>
 
@@ -112,11 +142,7 @@
           <!-- Add more images as needed -->
         </div>
 
-        <!-- NEW: Poetry section (generic link — replace with your site) -->
-        <article class="card" style="margin-top:1rem;">
-          <h2>Poetry</h2>
-          <p>I publish poems separately — <a href="https://poetry.example.com" target="_blank" rel="noopener">Visit my poetry site</a>. (Replace this URL with your poetry site.)</p>
-        </article>
+        <!-- (Poetry section removed as requested) -->
       </section>
     </div>
   </main>
