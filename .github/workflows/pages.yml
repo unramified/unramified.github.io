@@ -3,26 +3,37 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main   # <-- change to 'master' if your default branch is master
 
 permissions:
   contents: read
   id-token: write
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      # If you have a build step (e.g. npm run build), add it here.
-      # For a plain static site you can upload the repo root.
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+      # Optional: add build steps here if you need to build (e.g. npm run build)
+      # - name: Install dependencies
+      #   run: |
+      #     npm ci
+      # - name: Build site
+      #   run: |
+      #     npm run build
+      #   env:
+      #     NODE_ENV: production
+
+      - name: Upload GitHub Pages artifact
+        # use the latest upload-pages-artifact release (v3)
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: .    # <-- change to build output folder (e.g. ./dist or ./public) if needed
 
       - name: Deploy to GitHub Pages
         id: deploy
         uses: actions/deploy-pages@v4
+
