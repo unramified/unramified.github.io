@@ -78,7 +78,7 @@
 
   function wireMobileDrawer() {
     const toggles = Array.from(document.querySelectorAll('.mobile-toggle, .mobile-menu-btn, .mobile-toggle-btn, #mobile-toggle'));
-    const drawer = document.querySelector('.mobile-drawer, #mobile-drawer');
+    const drawer = document.querySelector('.mobile-drawer');
 
     if (!toggles.length || !drawer) {
       log('Mobile drawer wiring skipped.');
