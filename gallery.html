@@ -1,6 +1,5 @@
-<!-- filename: gallery.html -->
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,19 +19,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;700;1,300;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- Site stylesheet (use styles.css provided earlier) -->
+  <!-- Site stylesheet -->
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- Page-local tweaks: smaller gallery images, tighter grid, caption sizing -->
+  <!-- Page-local tweaks: smaller gallery images + colored socials -->
   <style>
     .logo-icon { font-weight:700; }
 
-    /* make gallery thumbnails medium/small (override global rules locally) */
+    /* gallery thumbnails */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 0.6rem;
       align-items: start;
+      margin-top: 0.5rem;
     }
     .gallery-grid figure {
       overflow: hidden;
@@ -43,7 +43,7 @@
     }
     .gallery-grid figure img {
       width: 100%;
-      height: 160px;      /* medium thumbnail height — change to 120/140/180 if you want */
+      height: 160px;
       object-fit: cover;
       display: block;
       transition: transform 200ms ease;
@@ -58,8 +58,12 @@
       background: linear-gradient(180deg, rgba(0,0,0,0.00), rgba(0,0,0,0.04));
     }
 
-    /* ensure overlay lightbox still looks fine */
-    .card img[style] { max-height: 80vh; max-width: 100%; }
+    /* footer social colors */
+    .footer-inner .social a.github { color: #24292e; }      /* GitHub */
+    .footer-inner .social a.linkedin { color: #0A66C2; }    /* LinkedIn */
+    .footer-inner .social a.instagram { color: #E1306C; }   /* Instagram */
+    .footer-inner .social a.email { color: var(--accent); } /* email accent */
+    .footer-inner .social a { margin-right: .6rem; font-size: 1.25rem; text-decoration:none; }
   </style>
 </head>
 <body>
@@ -67,7 +71,8 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Home">
-        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" onerror="this.onerror=null;this.replaceWith(document.createElement('div')).textContent='SM'"/>
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon"
+             onerror="this.onerror=null; const d=document.createElement('div'); d.textContent='SM'; d.className='logo-icon'; this.replaceWith(d);" />
         <span class="logo-text">Saheb Mohapatra</span>
       </a>
 
@@ -80,7 +85,7 @@
         <a href="gallery.html" class="active">Gallery</a>
         <a href="poetry.html">Poetry</a>
         <a href="misc.html">Misc</a>
-        <a href="contact.html">Contact</a>
+        <!-- contact removed as you requested -->
       </nav>
 
       <!-- Mobile hamburger -->
@@ -97,20 +102,15 @@
         <a href="research.html">Research</a>
         <a href="notes.html">Notes</a>
         <a href="gallery.html" class="active">Gallery</a>
-        <a href="misc.html" >Miscellaneous</a>
+        <a href="misc.html">Miscellaneous</a>
       </nav>
     </div>
   </header>
 
-  <!-- THEME TOGGLE -->
-  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-    <i class="fa fa-moon" aria-hidden="true"></i>
-  </button>
-
   <!-- MAIN CONTENT -->
   <main class="container" id="main" role="main">
     <div class="page-grid">
-      <!-- SIDEBAR (text preserved exactly) -->
+      <!-- SIDEBAR -->
       <aside class="sidebar" aria-labelledby="gallery-aside">
         <img src="images/saheb final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
         <div id="gallery-aside" style="margin-top:.6rem;">
@@ -118,7 +118,7 @@
         </div>
       </aside>
 
-      <!-- CONTENT (image captions and text preserved) -->
+      <!-- CONTENT -->
       <section class="content" aria-labelledby="gallery-heading">
         <h1 id="gallery-heading">Gallery</h1>
         <p>Below are some snapshots from conferences, seminars, and research sessions:</p>
@@ -138,16 +138,12 @@
             <img src="images/profile saheb.jpeg" alt="Beside ISI playground" loading="lazy" />
             <figcaption>ISI Kolkata Playground</figcaption>
           </figure>
-
-          <!-- Add more images as needed -->
         </div>
-
-        <!-- (Poetry section removed as requested) -->
       </section>
     </div>
   </main>
 
-  <!-- FOOTER (single consolidated footer with colored icons) -->
+  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
@@ -160,14 +156,11 @@
     </div>
   </footer>
 
-  <!-- Optional: lightweight lightbox + keyboard (small, no external libs) -->
+  <!-- lightweight lightbox -->
   <script>
     (function(){
-      // Simple accessible lightbox for gallery figures
       const figures = Array.from(document.querySelectorAll('.gallery-grid figure'));
       if (!figures.length) return;
-
-      // build overlay
       const overlay = document.createElement('div');
       overlay.className = 'card';
       overlay.style.position = 'fixed';
@@ -204,7 +197,6 @@
         cap.textContent = caption || '';
         overlay.style.display = 'flex';
         overlay.setAttribute('aria-hidden','false');
-        overlay.focus();
         document.documentElement.style.overflow = 'hidden';
       }
       function closeLightbox() {
@@ -213,7 +205,6 @@
         document.documentElement.style.overflow = '';
       }
 
-      // click/keyboard handlers
       figures.forEach(f => {
         const img = f.querySelector('img');
         const caption = f.querySelector('figcaption')?.textContent || '';
@@ -230,7 +221,26 @@
     })();
   </script>
 
-  <!-- Main site JS (theme + mobile drawer) -->
-  <script src="js/toggle.js" defer></script>
+  <!-- minimal mobile drawer behavior (same pattern as notes.html) -->
+  <script>
+    (function(){
+      function $(sel){return document.querySelector(sel);}
+      const btn = $('.mobile-toggle');
+      const drawer = $('.mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', ()=> {
+        const open = drawer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+      document.addEventListener('click', e => {
+        if (!drawer.classList.contains('open')) return;
+        if (drawer.contains(e.target) || btn.contains(e.target)) return;
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+      });
+    })();
+  </script>
 </body>
 </html>
