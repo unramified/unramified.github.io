@@ -1,5 +1,6 @@
+<!-- filename: research.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,92 +15,130 @@
   <meta name="theme-color" content="#0077cc" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;700;1,300;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- KaTeX -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" crossorigin="anonymous" />
+  <!-- KaTeX (for math rendering) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <style> .logo-icon{font-weight:700} </style>
 </head>
 <body>
-  <header class="site-header">
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Home">
-        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" onerror="this.onerror=null;this.replaceWith(document.createElement('div')).textContent='SM'"/>
         <span class="logo-text">Saheb Mohapatra</span>
       </a>
-      <nav class="nav" aria-label="Main menu">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="research.html" class="active">Research</a></li>
-          <li><a href="notes.html">Notes</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="poetry.html">Poetry</a></li>
-          <li><a href="misc.html">Misc</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main menu" class="nav-links" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html">Misc</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <button class="toggle-btn" aria-label="Toggle dark/light theme"><i class="fa fa-moon"></i></button>
+
+      <!-- Mobile hamburger -->
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" aria-hidden="true">
+      <nav class="nav-links" aria-label="Mobile main">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html">Misc</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <aside class="sidebar">
-      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
-      <p class="intro">Research &amp; Publications</p>
-      <nav class="sidebar-links" aria-label="Sections">
-        <ul>
-          <li><a href="#interests">Research Interests</a></li>
-          <li><a href="#publications">Publications</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+    <i class="fa fa-moon" aria-hidden="true"></i>
+  </button>
 
-    <section class="content">
-      <h1>Research &amp; Publications</h1>
-      <p>I am an incoming PhD student at Durham University (MSCA COGENT scholar) focusing on algebraic <span class="math">\(K\)</span>-theory. My work so far has explored the relationship between scissors congruence groups and <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory.</p>
+  <!-- MAIN CONTENT -->
+  <main class="container" id="main" role="main">
+    <div class="page-grid">
+      <!-- SIDEBAR (text preserved exactly) -->
+      <aside class="sidebar" aria-labelledby="research-aside">
+        <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
+        <div id="research-aside" style="margin-top:.6rem;">
+          <p class="intro">Research &amp; Publications</p>
+        </div>
 
-      <article id="interests">
-        <h2>Research Interests</h2>
-        <ul>
-          <li>Algebraic <span class="math">\(K\)</span>-theory</li>
-          <li><span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
-          <li>Scissors congruence group and Bloch group in the context of <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
-          <li>Milnor–Witt <span class="math">\(K\)</span>-theory and quadratic forms</li>
-        </ul>
-      </article>
+        <nav class="card" aria-label="Sections">
+          <ul style="margin:0; padding:0; list-style:none;">
+            <li style="margin-bottom:.5rem;"><a class="small-link" href="#interests">Research Interests</a></li>
+            <li><a class="small-link" href="#publications">Publications</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <article id="publications">
-        <h2>Publications</h2>
-        <ul>
-          <li>
-            <a href="https://doi.org/10.xxxx/xxxxx" target="_blank">Saheb Mohapatra, "Unramified Milnor–Witt <span class="math">\(K\)</span>-theory and the Scissors Congruence Group," (2025)</a>
-            <span class="separator">|</span>
-            <a href="research/Master Thesis 2.pdf" download><i class="fa fa-download"></i> PDF</a>
-          </li>
-          <!-- Add more publications here -->
-        </ul>
-      </article>
-    </section>
+      <!-- CONTENT (original text preserved verbatim) -->
+      <section class="content" aria-labelledby="research-heading">
+        <h1 id="research-heading">Research &amp; Publications</h1>
+
+        <p>I am an incoming PhD student at Durham University (MSCA COGENT scholar) focusing on algebraic <span class="math">\(K\)</span>-theory. My work so far has explored the relationship between scissors congruence groups and <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory.</p>
+
+        <article id="interests" class="card">
+          <h2>Research Interests</h2>
+          <ul>
+            <li>Algebraic <span class="math">\(K\)</span>-theory</li>
+            <li><span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
+            <li>Scissors congruence group and Bloch group in the context of <span class="math">\(\mathbb{A}^1\)</span>-homotopy theory</li>
+            <li>Milnor–Witt <span class="math">\(K\)</span>-theory and quadratic forms</li>
+          </ul>
+        </article>
+
+        <article id="publications" class="card">
+          <h2>Publications</h2>
+          <ul>
+            <li>
+              <a href="https://doi.org/10.xxxx/xxxxx" target="_blank" rel="noopener">Saheb Mohapatra, "Unramified Milnor–Witt <span class="math">\(K\)</span>-theory and the Scissors Congruence Group," (2025)</a>
+              <span class="separator">|</span>
+              <a href="research/Master Thesis 2.pdf" download rel="noopener"><i class="fa fa-download" aria-hidden="true"></i> PDF</a>
+            </li>
+            <!-- Add more publications here -->
+          </ul>
+        </article>
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <!-- FOOTER (text preserved) -->
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
-      <div class="social">
+      <div class="social" aria-label="social links">
         <a href="https://github.com/unramified" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/saheb-mohapatra" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="js/theme-toggle.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'$',right:'$',display:false}]});"></script>
+  <!-- KaTeX auto-render and main JS (theme + drawer) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}]});"></script>
+
+  <script src="toggle.js" defer></script>
 </body>
 </html>

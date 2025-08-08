@@ -1,5 +1,6 @@
+<!-- filename: notes.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,72 +15,116 @@
   <meta name="theme-color" content="#0077cc" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;700;1,300;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- KaTeX (optional math rendering across site) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
+
+  <!-- Site styles -->
+  <link rel="stylesheet" href="styles.css" />
+  <style> .logo-icon{font-weight:700} </style>
 </head>
 <body>
-  <header class="site-header">
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Home">
-        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" onerror="this.onerror=null;this.replaceWith(document.createElement('div')).textContent='SM'"/>
         <span class="logo-text">Saheb Mohapatra</span>
       </a>
-      <nav class="nav" aria-label="Main menu">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="notes.html" class="active">Notes</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="poetry.html">Poetry</a></li>
-          <li><a href="misc.html">Misc</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main menu" class="nav-links" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html">Misc</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <button class="toggle-btn" aria-label="Toggle dark/light theme"><i class="fa fa-moon"></i></button>
+
+      <!-- Mobile hamburger -->
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" aria-hidden="true">
+      <nav class="nav-links" aria-label="Mobile main">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="notes.html" class="active">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html">Misc</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <aside class="sidebar">
-      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
-      <p class="intro">Lecture Notes</p>
-      <nav class="sidebar-links" aria-label="Topics">
-        <ul>
-          <li><a href="#plus">The + Construction</a></li>
-          <li><a href="#flatness">Flatness and Tor</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+    <i class="fa fa-moon" aria-hidden="true"></i>
+  </button>
 
-    <section class="content">
-      <h1>Notes</h1>
-      <p>Below are some of my lecture notes from various topics:</p>
+  <!-- MAIN CONTENT -->
+  <main class="container" id="main" role="main">
+    <div class="page-grid">
+      <!-- SIDEBAR (text preserved exactly) -->
+      <aside class="sidebar" aria-labelledby="notes-aside">
+        <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
+        <div id="notes-aside" style="margin-top:.6rem;">
+          <p class="intro">Lecture Notes</p>
+        </div>
 
-      <article id="plus">
-        <h2>The + Construction</h2>
-        <p><a href="research/%2B%20Construction.pdf" target="_blank" download><i class="fa fa-file-pdf"></i> The + Construction (PDF)</a></p>
-      </article>
+        <nav class="card" aria-label="Topics">
+          <ul style="margin:0; padding:0; list-style:none;">
+            <li style="margin-bottom:.5rem;"><a class="small-link" href="#plus">The + Construction</a></li>
+            <li><a class="small-link" href="#flatness">Flatness and Tor</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <article id="flatness">
-        <h2>Flatness and Tor</h2>
-        <p><a href="research/Some_characterisations_of_flatness_using_Tor_functor.pdf" target="_blank" download><i class="fa fa-file-pdf"></i> Flatness and Tor (PDF)</a></p>
-      </article>
+      <!-- CONTENT (original notes text preserved verbatim) -->
+      <section class="content" aria-labelledby="notes-heading">
+        <h1 id="notes-heading">Notes</h1>
+        <p>Below are some of my lecture notes from various topics:</p>
 
-      <!-- Add more sections as needed -->
-    </section>
+        <article id="plus" class="card">
+          <h2>The + Construction</h2>
+          <p><a href="research/%2B%20Construction.pdf" target="_blank" download rel="noopener"><i class="fa fa-file-pdf" aria-hidden="true"></i> The + Construction (PDF)</a></p>
+        </article>
+
+        <article id="flatness" class="card">
+          <h2>Flatness and Tor</h2>
+          <p><a href="research/Some_characterisations_of_flatness_using_Tor_functor.pdf" target="_blank" download rel="noopener"><i class="fa fa-file-pdf" aria-hidden="true"></i> Flatness and Tor (PDF)</a></p>
+        </article>
+
+        <!-- Add more sections as needed -->
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <!-- FOOTER (text preserved) -->
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
     </div>
   </footer>
 
-  <script src="js/theme-toggle.js"></script>
+  <!-- KaTeX auto-render (if any math appears) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="if(window.renderMathInElement){try{renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}]});}catch(e){console.warn(e);}}"></script>
+
+  <!-- Main site JS (theme + drawer) -->
+  <script src="toggle.js" defer></script>
 </body>
 </html>

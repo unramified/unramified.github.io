@@ -1,5 +1,6 @@
+<!-- filename: misc.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,93 +15,129 @@
   <meta name="theme-color" content="#0077cc" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
-  <!-- Google Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Fonts & icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;700;1,300;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- Main Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Core stylesheet (use the styles.css provided earlier) -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>.logo-icon{font-weight:700}</style>
 </head>
 <body>
-  <header class="site-header">
+  <!-- SITE HEADER -->
+  <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Home">
-        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" />
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" onerror="this.onerror=null;this.replaceWith(document.createElement('div')).textContent='SM'"/>
         <span class="logo-text">Saheb Mohapatra</span>
       </a>
-      <nav class="nav" aria-label="Main menu">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="cv.html">CV</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="notes.html">Notes</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="poetry.html">Poetry</a></li>
-          <li><a href="misc.html" class="active">Misc</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+
+      <!-- Desktop nav -->
+      <nav aria-label="Main menu" class="nav-links" role="navigation">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html" class="active">Misc</a>
+        <a href="contact.html">Contact</a>
       </nav>
-      <button class="toggle-btn" aria-label="Toggle dark/light theme"><i class="fa fa-moon"></i></button>
+
+      <!-- Mobile hamburger -->
+      <button class="mobile-toggle" aria-label="Open menu" aria-expanded="false">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-drawer" aria-hidden="true">
+      <nav class="nav-links" aria-label="Mobile main">
+        <a href="index.html">Home</a>
+        <a href="cv.html">CV</a>
+        <a href="research.html">Research</a>
+        <a href="notes.html">Notes</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="poetry.html">Poetry</a>
+        <a href="misc.html" class="active">Misc</a>
+        <a href="contact.html">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <aside class="sidebar">
-      <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
-      <p class="intro">Miscellaneous Resources</p>
-      <nav class="sidebar-links" aria-label="Sections">
-        <ul>
-          <li><a href="#math-resources">Math Resources</a></li>
-          <li><a href="#visa-guide">UK Visa Guide</a></li>
-          <li><a href="#study-tips">Study Tips</a></li>
-        </ul>
-      </nav>
-    </aside>
+  <!-- THEME TOGGLE -->
+  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+    <i class="fa fa-moon" aria-hidden="true"></i>
+  </button>
 
-    <section class="content">
-      <h1>Miscellaneous</h1>
+  <!-- MAIN CONTENT -->
+  <main class="container" id="main" role="main">
+    <div class="page-grid">
+      <!-- SIDEBAR (exact text preserved) -->
+      <aside class="sidebar" aria-labelledby="misc-aside">
+        <img src="images/saheb-final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
+        <div id="misc-aside" style="margin-top:.6rem;">
+          <p class="intro">Miscellaneous Resources</p>
+        </div>
 
-      <article id="math-resources">
-        <h2>Math Resources</h2>
-        <ul>
-          <li><a href="https://mathoverflow.net" target="_blank">MathOverflow</a> - Research-level Q&A</li>
-          <li><a href="https://arxiv.org" target="_blank">arXiv</a> - Preprint server for academia</li>
-          <li><a href="https://ncatlab.org" target="_blank">nLab</a> - Collaborative math and physics wiki</li>
-          <!-- Add more links -->
-        </ul>
-      </article>
+        <nav class="card" aria-label="Sections">
+          <ul style="margin:0; padding:0; list-style:none;">
+            <li style="margin-bottom:.5rem;"><a class="small-link" href="#math-resources">Math Resources</a></li>
+            <li style="margin-bottom:.5rem;"><a class="small-link" href="#visa-guide">UK Visa Guide</a></li>
+            <li><a class="small-link" href="#study-tips">Study Tips</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-      <article id="visa-guide">
-        <h2>UK Visa Guide</h2>
-        <ul>
-          <li><a href="https://www.gov.uk/student-visa" target="_blank">UK Student Visa Requirements</a></li>
-          <li><a href="https://www.ukcisa.org.uk/Information--Advice" target="_blank">UK Council for International Student Affairs</a></li>
-          <li>Tips: Apply 3 months before start date, prepare financial docs, health surcharge</li>
-        </ul>
-      </article>
+      <!-- CONTENT (original text preserved verbatim) -->
+      <section class="content" aria-labelledby="misc-heading">
+        <h1 id="misc-heading">Miscellaneous</h1>
 
-      <article id="study-tips">
-        <h2>Study Tips</h2>
-        <ul>
-          <li>Use spaced repetition (Anki) for definitions and theorems</li>
-          <li>Collaborate via reading groups and seminars</li>
-          <li>Maintain a handwritten diary of math insights</li>
-          <!-- Add more tips -->
-        </ul>
-      </article>
-    </section>
+        <article id="math-resources" class="card">
+          <h2>Math Resources</h2>
+          <ul>
+            <li><a href="https://mathoverflow.net" target="_blank" rel="noopener">MathOverflow</a> - Research-level Q&A</li>
+            <li><a href="https://arxiv.org" target="_blank" rel="noopener">arXiv</a> - Preprint server for academia</li>
+            <li><a href="https://ncatlab.org" target="_blank" rel="noopener">nLab</a> - Collaborative math and physics wiki</li>
+            <!-- Add more links -->
+          </ul>
+        </article>
+
+        <article id="visa-guide" class="card">
+          <h2>UK Visa Guide</h2>
+          <ul>
+            <li><a href="https://www.gov.uk/student-visa" target="_blank" rel="noopener">UK Student Visa Requirements</a></li>
+            <li><a href="https://www.ukcisa.org.uk/Information--Advice" target="_blank" rel="noopener">UK Council for International Student Affairs</a></li>
+            <li>Tips: Apply 3 months before start date, prepare financial docs, health surcharge</li>
+          </ul>
+        </article>
+
+        <article id="study-tips" class="card">
+          <h2>Study Tips</h2>
+          <ul>
+            <li>Use spaced repetition (Anki) for definitions and theorems</li>
+            <li>Collaborate via reading groups and seminars</li>
+            <li>Maintain a handwritten diary of math insights</li>
+            <!-- Add more tips -->
+          </ul>
+        </article>
+      </section>
+    </div>
   </main>
 
-  <footer>
+  <!-- FOOTER (text preserved) -->
+  <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
-      <div class="social">
+      <div class="social" aria-label="social links">
         <a href="https://github.com/unramified" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="https://linkedin.com/in/saheb-mohapatra" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="js/theme-toggle.js"></script>
+  <!-- Main site JS (theme + mobile drawer) -->
+  <script src="toggle.js" defer></script>
 </body>
 </html>
