@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main           # ← change to 'master' if needed
+  workflow_dispatch:   # allows manual trigger from Actions UI
+
+# Grant permissions required by deploy-pages@v4
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages       # <<< required by deploy-pages@v4
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Optional: add build steps if your site needs it
+      # - name: Install dependencies
+      #   run: npm ci
+      # - name: Build site
+      #   run: npm run build
+      #   env:
+      #     NODE_ENV: production
+
+      - name: List workspace (debug)
+        run: ls -la
+
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .    # change to ./dist or ./public if your build output is there
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
