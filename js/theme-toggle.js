@@ -11,7 +11,7 @@
     root.setAttribute('data-theme', theme);
     try { localStorage.setItem(LS_KEY, theme); } catch {}
 
-    document.querySelectorAll('.theme-toggle, .toggle-btn').forEach(btn => {
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
       btn.setAttribute('aria-pressed', theme === 'dark');
       btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
       let icon = btn.querySelector('i') || document.createElement('i');
@@ -33,7 +33,7 @@
   }
 
   function wireThemeButtons() {
-    const btns = document.querySelectorAll('.theme-toggle, .toggle-btn');
+    const btns = document.querySelectorAll('.toggle-btn');
     btns.forEach(btn => {
       btn.setAttribute('role', 'switch');
       btn.addEventListener('click', toggleTheme);
