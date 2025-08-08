@@ -1,6 +1,5 @@
-<!-- filename: notes.html -->
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +11,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:image" content="images/saheb final.jpg" />
   <meta property="og:url" content="https://yourdomain.com/notes.html" />
-  <meta name="theme-color" content="#0077cc" />
+  <meta name="theme-color" content="#0A66C2" />
   <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
 
   <!-- Fonts & icons -->
@@ -20,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,300;0,400;700;1,300;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
-  <!-- KaTeX (optional math rendering across site) -->
+  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css" crossorigin="anonymous" />
 
   <!-- Site styles -->
@@ -32,7 +31,8 @@
   <header class="site-header" role="banner">
     <div class="header-inner">
       <a href="index.html" class="logo" aria-label="Home">
-        <img src="images/logo.svg" alt="SM Logo" class="logo-icon" onerror="this.onerror=null;this.replaceWith(document.createElement('div')).textContent='SM'"/>
+        <img src="images/logo.svg" alt="SM Logo" class="logo-icon"
+             onerror="this.onerror=null; const d=document.createElement('div'); d.textContent='SM'; d.className='logo-icon'; this.replaceWith(d);" />
         <span class="logo-text">Saheb Mohapatra</span>
       </a>
 
@@ -56,23 +56,16 @@
 
     <!-- Mobile drawer -->
     <div class="mobile-drawer" aria-hidden="true">
-      <nav class="nav-links" aria-label="Mobile main">
+      <nav aria-label="Main menu" class="nav-links" role="navigation">
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
         <a href="research.html">Research</a>
-        <a href="notes.html" class="active">Notes</a>
+        <a href="notes.html">Notes</a>
         <a href="gallery.html">Gallery</a>
-        <a href="poetry.html">Poetry</a>
-        <a href="misc.html">Misc</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+        <a href="misc.html" class="active">Miscellaneous</a>
+             </nav>
     </div>
   </header>
-
-  <!-- THEME TOGGLE -->
-  <button class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
-    <i class="fa fa-moon" aria-hidden="true"></i>
-  </button>
 
   <!-- MAIN CONTENT -->
   <main class="container" id="main" role="main">
@@ -112,29 +105,61 @@
     </div>
   </main>
 
-  <!-- FOOTER (text preserved) -->
+  <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
       <p>&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+      <div class="social" aria-label="social links">
+        <a class="github" href="https://github.com/unramified" aria-label="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+        <a class="linkedin" href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" aria-label="LinkedIn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+        <a class="instagram" href="https://instagram.com/saheb.mohapatra" aria-label="Instagram" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a class="email" href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
     </div>
   </footer>
 
-  <!-- KaTeX auto-render (if any math appears) -->
+  <!-- KaTeX auto-render -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"
-    onload="if(window.renderMathInElement){try{renderMathInElement(document.body,{delimiters:[{left:'$$',right:'$$',display:true},{left:'\\[',right:'\\]',display:true},{left:'$',right:'$',display:false},{left:'\\(',right:'\\)',display:false}]});}catch(e){console.warn(e);}}"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (window.renderMathInElement) {
+        try {
+          renderMathInElement(document.body, {
+            delimiters: [
+              {left: "$$", right: "$$", display: true},
+              {left: "\\[", right: "\\]", display: true},
+              {left: "$", right: "$", display: false},
+              {left: "\\(", right: "\\)", display: false}
+            ],
+            throwOnError: false
+          });
+        } catch (e) { console.warn('KaTeX render failed', e); }
+      }
+    });
+  </script>
 
-  <!-- Main site JS (theme + drawer) -->
-  <script src="js/toggle.js" defer></script>
-  <footer class="site-footer">
-  <div class="footer-socials">
-    <a href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Email" class="social-icon email"><i class="fas fa-envelope"></i></a>
-    <a href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" target="_blank" aria-label="LinkedIn" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/unramified" target="_blank" aria-label="GitHub" class="social-icon github"><i class="fab fa-github"></i></a>
-    <a href="https://instagram.com/saheb.mohapatra" target="_blank" aria-label="Instagram" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-  </div>
-  <p class="footer-copy">&copy; 2025 Your Name. All rights reserved.</p>
-</footer>
-
+  <!-- small mobile script: toggle the right drawer -->
+  <script>
+    (function(){
+      function $(sel){return document.querySelector(sel);}
+      const btn = $('.mobile-toggle');
+      const drawer = $('.mobile-drawer');
+      if (!btn || !drawer) return;
+      btn.addEventListener('click', ()=> {
+        const open = drawer.classList.toggle('open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      });
+      // close when clicking outside
+      document.addEventListener('click', e => {
+        if (!drawer.classList.contains('open')) return;
+        if (drawer.contains(e.target) || btn.contains(e.target)) return;
+        drawer.classList.remove('open');
+        drawer.setAttribute('aria-hidden','true');
+        btn.setAttribute('aria-expanded','false');
+      });
+    })();
+  </script>
 </body>
 </html>
