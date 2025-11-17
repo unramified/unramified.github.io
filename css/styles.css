@@ -35,6 +35,7 @@
 /* Base */
 *{box-sizing:border-box}
 html{font-size:var(--base)}
+html, body { height: 100%; } /* ensure full-height for the fixed background layer */
 body{
   margin:0;
   font-family:var(--font);
@@ -43,7 +44,27 @@ body{
   line-height:var(--line);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
+
+  position: relative; /* needed for ::before layering context */
 }
+
+/* Watermark background layer */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: url('images/watermark.png') center/cover no-repeat;
+  opacity:0.08;         /* adjust 0.03–0.15 for subtlety */
+  pointer-events:none;  /* allow clicks through */
+  z-index:-1;           /* keep behind all content */
+}
+
+/* Optional: relax fixed bg on small screens to reduce jank */
+/*
+@media (max-width: 800px){
+  body::before { position:absolute; }
+}
+*/
 
 /* Layout */
 .container{
@@ -118,4 +139,3 @@ input:focus, textarea:focus, select:focus{border-color:var(--accent); box-shadow
 
 /* Footer spacing */
 hr{border:0; border-top:1px solid var(--border); margin:2rem 0; opacity:.6}
-``*
