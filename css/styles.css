@@ -35,7 +35,7 @@
 /* Base */
 *{box-sizing:border-box}
 html{font-size:var(--base)}
-html, body { height: 100%; } /* ensure full-height for the fixed background layer */
+html, body { height: 100%; }
 body{
   margin:0;
   font-family:var(--font);
@@ -44,20 +44,24 @@ body{
   line-height:var(--line);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-
-  position: relative; /* needed for ::before layering context */
+  position: relative; /* for ::before layering */
 }
 
-/* Watermark background layer */
+/* Watermark background layer (robust) */
+html, body { position: relative; }
 body::before{
   content:"";
-  position:fixed;
+  position:fixed;              /* stays put while scrolling */
   inset:0;
-  background: url('images/website_saheb.jpg') center/cover no-repeat;
-  opacity:0.08;         /* adjust 0.03–0.15 for subtlety */
-  pointer-events:none;  /* allow clicks through */
-  z-index:-1;           /* keep behind all content */
+  background:
+    url('images/website_saheb.jpg') center/cover no-repeat; /* adjust path if needed */
+  opacity:0.10;                /* 0.03–0.15 for watermark subtlety */
+  pointer-events:none;
+  z-index:0;                   /* sit behind content */
 }
+
+/* Ensure content is above the background layer */
+main, .container, header, section, footer { position: relative; z-index:1; }
 
 /* Optional: relax fixed bg on small screens to reduce jank */
 /*
@@ -122,7 +126,10 @@ input, textarea, select{
   border-radius:8px;
   outline:none;
 }
-input:focus, textarea:focus, select:focus{border-color:var(--accent); box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent)}
+input:focus, textarea:focus, select:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent)
+}
 
 /* Media helpers */
 .img{
