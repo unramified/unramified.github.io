@@ -47,28 +47,22 @@ body{
   position: relative; /* for ::before layering */
 }
 
-/* Watermark background layer (robust) */
+/* Watermark background layer (diagnostic: shows even if image fails) */
 html, body { position: relative; }
 body::before{
   content:"";
-  position:fixed;              /* stays put while scrolling */
+  position:fixed;
   inset:0;
   background:
-    url('images/website_saheb.jpg') center/cover no-repeat; /* adjust path if needed */
-  opacity:0.10;                /* 0.03–0.15 for watermark subtlety */
+    url('images/website_saheb.jpg') center/cover no-repeat,
+    linear-gradient(135deg, rgba(122,162,247,0.2), rgba(158,206,106,0.2)); /* fallback so you SEE something */
+  opacity:0.25;                /* temporarily higher for verification */
   pointer-events:none;
-  z-index:0;                   /* sit behind content */
+  z-index:0;
 }
 
 /* Ensure content is above the background layer */
 main, .container, header, section, footer { position: relative; z-index:1; }
-
-/* Optional: relax fixed bg on small screens to reduce jank */
-/*
-@media (max-width: 800px){
-  body::before { position:absolute; }
-}
-*/
 
 /* Layout */
 .container{
