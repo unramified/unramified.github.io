@@ -1,0 +1,16 @@
+{
+  "name": "unramified.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Saheb Mohapatra — minimalist static site",
+  "scripts": {
+    "dev": "serve -l 4321 .",
+    "start": "serve -l 4321 .",
+    "preview": "serve -l 4321 .",
+    "format": "echo \"Add Prettier if needed: npm i -D prettier && npx prettier -w .\"",
+    "lint": "echo \"Add HTML/CSS linters later if desired.\""
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
