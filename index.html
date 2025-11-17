@@ -1,11 +1,18 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-9">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Saheb</title>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- MathJax (minimal) -->
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\$$','\$$']], displayMath: [['$$','$$']], processEscapes: true } };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
+
 <body>
   <main class="container">
     <header>
@@ -15,15 +22,18 @@
 
     <section>
       <h2>About</h2>
-      <p>One or two sentences about you.</p>
+      <p>One or two sentences about you. Inline math demo: $$ a^2 + b^2 = c^2 $$.</p>
     </section>
 
     <section>
-      <h2>Projects</h2>
+      <h2>Pre-prints/Publications</h2>
       <ul>
-        <li><a href="#">Project One</a></li>
-        <li><a href="#">Project Two</a></li>
+        <li><a href="#">Bloch-Suslin Complex and Strong A1-invariance</a></li>
       </ul>
+      <p>Display math demo:</p>
+      $$
+      \int_0^1 x^2\,dx = \frac{1}{3}
+      $$
     </section>
 
     <footer>
@@ -32,9 +42,7 @@
   </main>
 
   <script>
-    // Tiny year auto-update; remove if undesired
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
