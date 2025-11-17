@@ -43,9 +43,7 @@
         <a href="research.html">Research</a>
         <a href="notes.html" class="active">Notes</a>
         <a href="gallery.html">Gallery</a>
-        
         <a href="misc.html">Miscellaneous</a>
-      
       </nav>
 
       <!-- Mobile hamburger -->
@@ -62,15 +60,15 @@
         <a href="research.html">Research</a>
         <a href="notes.html" class="active">Notes</a>
         <a href="gallery.html">Gallery</a>
-        <a href="misc.html" >Miscellaneous</a>
-             </nav>
+        <a href="misc.html">Miscellaneous</a>
+      </nav>
     </div>
   </header>
 
   <!-- MAIN CONTENT -->
   <main class="container" id="main" role="main">
     <div class="page-grid">
-      <!-- SIDEBAR (text preserved exactly) -->
+      <!-- SIDEBAR -->
       <aside class="sidebar" aria-labelledby="notes-aside">
         <img src="images/saheb final.jpg" alt="Saheb Mohapatra portrait" class="profile-photo" loading="lazy" />
         <div id="notes-aside" style="margin-top:.6rem;">
@@ -85,19 +83,61 @@
         </nav>
       </aside>
 
-      <!-- CONTENT (original notes text preserved verbatim) -->
+      <!-- CONTENT -->
       <section class="content" aria-labelledby="notes-heading">
         <h1 id="notes-heading">Notes</h1>
         <p>Below are some of my lecture notes from various topics:</p>
 
+        <!-- Quick scan table -->
+        <article class="card" aria-labelledby="notes-table-heading">
+          <h2 id="notes-table-heading">Quick Links</h2>
+          <div class="table-wrapper" role="region" aria-label="Notes table" tabindex="0">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Topic</th>
+                  <th scope="col">Link</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>The + Construction</td>
+                  <td>
+                    <a href="research/%2B%20Construction.pdf" target="_blank" rel="noopener" download aria-label="Download: The plus construction PDF">
+                      <i class="fa fa-file-pdf" aria-hidden="true"></i> PDF
+                    </a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Flatness and Tor</td>
+                  <td>
+                    <a href="research/Some_characterisations_of_flatness_using_Tor_functor.pdf" target="_blank" rel="noopener" download aria-label="Download: Flatness and Tor PDF">
+                      <i class="fa fa-file-pdf" aria-hidden="true"></i> PDF
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- Original sections -->
         <article id="plus" class="card">
           <h2>The + Construction</h2>
-          <p><a href="research/%2B%20Construction.pdf" target="_blank" download rel="noopener"><i class="fa fa-file-pdf" aria-hidden="true"></i> The + Construction (PDF)</a></p>
+          <p>
+            <a href="research/%2B%20Construction.pdf" target="_blank" download rel="noopener" aria-label="Download: The plus construction PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> The + Construction (PDF)
+            </a>
+          </p>
         </article>
 
         <article id="flatness" class="card">
           <h2>Flatness and Tor</h2>
-          <p><a href="research/Some_characterisations_of_flatness_using_Tor_functor.pdf" target="_blank" download rel="noopener"><i class="fa fa-file-pdf" aria-hidden="true"></i> Flatness and Tor (PDF)</a></p>
+          <p>
+            <a href="research/Some_characterisations_of_flatness_using_Tor_functor.pdf" target="_blank" download rel="noopener" aria-label="Download: Flatness and Tor PDF">
+              <i class="fa fa-file-pdf" aria-hidden="true"></i> Flatness and Tor (PDF)
+            </a>
+          </p>
         </article>
 
         <!-- Add more sections as needed -->
@@ -106,31 +146,29 @@
   </main>
 
   <!-- FOOTER -->
-  <!-- canonical footer: paste once at the end of <body> -->
-<footer class="site-footer" role="contentinfo">
-  <div class="footer-inner">
-    <p class="footer-copy">&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2025 Saheb Mohapatra. All rights reserved.</p>
 
-    <div class="social" aria-label="social links">
-      <a class="social-link github" href="https://github.com/unramified" aria-label="GitHub" target="_blank" rel="noopener">
-        <i class="fab fa-github" aria-hidden="true"></i>
-      </a>
+      <div class="social" aria-label="social links">
+        <a class="social-link github" href="https://github.com/unramified" aria-label="GitHub" target="_blank" rel="noopener">
+          <i class="fab fa-github" aria-hidden="true"></i>
+        </a>
 
-      <a class="social-link linkedin" href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" aria-label="LinkedIn" target="_blank" rel="noopener">
-        <i class="fab fa-linkedin" aria-hidden="true"></i>
-      </a>
+        <a class="social-link linkedin" href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" aria-label="LinkedIn" target="_blank" rel="noopener">
+          <i class="fab fa-linkedin" aria-hidden="true"></i>
+        </a>
 
-      <a class="social-link instagram" href="https://instagram.com/saheb.mohapatra" aria-label="Instagram" target="_blank" rel="noopener">
-        <i class="fab fa-instagram" aria-hidden="true"></i>
-      </a>
+        <a class="social-link instagram" href="https://instagram.com/saheb.mohapatra" aria-label="Instagram" target="_blank" rel="noopener">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
 
-      <a class="social-link email" href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Email">
-        <i class="fas fa-envelope" aria-hidden="true"></i>
-      </a>
+        <a class="social-link email" href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Email">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
     </div>
-  </div>
-</footer>
-
+  </footer>
 
   <!-- KaTeX auto-render -->
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js" crossorigin="anonymous"></script>
@@ -142,9 +180,9 @@
           renderMathInElement(document.body, {
             delimiters: [
               {left: "$$", right: "$$", display: true},
-              {left: "\\[", right: "\\]", display: true},
+              {left: "\$$", right: "\$$", display: true},
               {left: "$", right: "$", display: false},
-              {left: "\\(", right: "\\)", display: false}
+              {left: "\$$", right: "\$$", display: false}
             ],
             throwOnError: false
           });
