@@ -53,7 +53,7 @@ body::before{
   content:"";
   position:fixed;
   inset:0;
-  background: url('images/watermark.png') center/cover no-repeat;
+  background: url('images/bg.jpeg') center/cover no-repeat;
   opacity:0.08;         /* adjust 0.03–0.15 for subtlety */
   pointer-events:none;  /* allow clicks through */
   z-index:-1;           /* keep behind all content */
