@@ -18,7 +18,7 @@
   --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
   /* Background image & overlays */
-  --bg-image: url('images/website_saheb.jpg'); /* dark mode default */
+  --bg-image: url('images/bg.jpeg'); /* dark mode default */
   --bg-opacity: 0.25;
   --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
 }
