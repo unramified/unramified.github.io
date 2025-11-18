@@ -16,9 +16,14 @@
   --line: 1.6;
   --space: 1rem;
   --shadow: 0 6px 20px rgba(0,0,0,0.35);
+
+  /* Background image & overlays */
+  --bg-image: url('images/website_saheb.jpg'); /* dark mode default */
+  --bg-opacity: 0.25;
+  --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
 }
 
-/* Light mode override (auto) */
+/* Light mode override */
 @media (prefers-color-scheme: light){
   :root{
     --bg: #fafbff;
@@ -29,13 +34,19 @@
     --surface: #ffffff;
     --border: #e6e9f2;
     --shadow: 0 6px 20px rgba(0,0,0,0.08);
+
+    /* Light background image + softer presence */
+    --bg-image: url('images/bg.jpeg');
+    --bg-opacity: 0.06;
+    --bg-tint: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(250,250,250,0.45));
   }
 }
 
 /* Base */
-*{box-sizing:border-box}
-html{font-size:var(--base)}
-html, body { height: 100%; }
+*{ box-sizing:border-box; }
+html{ font-size:var(--base); }
+html, body { height: 100%; position: relative; }
+
 body{
   margin:0;
   font-family:var(--font);
@@ -44,19 +55,18 @@ body{
   line-height:var(--line);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  position: relative; /* for ::before layering */
+  position: relative;
 }
 
-/* Watermark background layer (diagnostic: shows even if image fails) */
-html, body { position: relative; }
+/* Background image layer */
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:
-    url('images/website_saheb.jpg') center/cover no-repeat,
-    linear-gradient(135deg, rgba(122,162,247,0.2), rgba(158,206,106,0.2)); /* fallback so you SEE something */
-  opacity:0.25;                /* temporarily higher for verification */
+    var(--bg-tint),
+    var(--bg-image) center/cover no-repeat;
+  opacity: var(--bg-opacity);
   pointer-events:none;
   z-index:0;
 }
@@ -72,19 +82,33 @@ main, .container, header, section, footer { position: relative; z-index:1; }
 }
 
 /* Type scale */
-h1,h2,h3,h4,h5,h6{margin:0 0 .5em; font-weight:700}
-h1{font-size:clamp(2rem, 4vw, 2.6rem)}
-h2{font-size:clamp(1.5rem, 3vw, 2rem)}
-h3{font-size:clamp(1.25rem, 2.2vw, 1.5rem)}
-p{margin:0 0 1em}
-small,.muted{color:var(--muted)}
-code,kbd,pre{font-family:var(--mono); background:var(--surface); border:1px solid var(--border); border-radius:6px}
-code,kbd{padding:.15em .4em}
-pre{padding:1rem; overflow:auto}
+h1,h2,h3,h4,h5,h6{
+  margin:0 0 .5em;
+  font-weight:700;
+}
+h1{ font-size:clamp(2rem, 4vw, 2.6rem); }
+h2{ font-size:clamp(1.5rem, 3vw, 2rem); }
+h3{ font-size:clamp(1.25rem, 2.2vw, 1.5rem); }
+p{ margin:0 0 1em; }
+small,.muted{ color:var(--muted); }
+code,kbd,pre{
+  font-family:var(--mono);
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:6px;
+}
+code,kbd{ padding:.15em .4em; }
+pre{ padding:1rem; overflow:auto; }
 
 /* Links & buttons */
-a{color:var(--accent); text-decoration:none}
-a:hover{opacity:.85; text-decoration:underline}
+a{
+  color:var(--accent);
+  text-decoration:none;
+}
+a:hover{
+  opacity:.85;
+  text-decoration:underline;
+}
 .button{
   display:inline-block;
   padding:.6rem 1rem;
@@ -95,10 +119,16 @@ a:hover{opacity:.85; text-decoration:underline}
   cursor:pointer;
   transition:transform .06s ease, filter .2s ease;
 }
-.button.secondary{background:var(--surface); color:var(--fg); border:1px solid var(--border)}
-.button:active{transform:translateY(1px)}
+.button.secondary{
+  background:var(--surface);
+  color:var(--fg);
+  border:1px solid var(--border);
+}
+.button:active{ transform:translateY(1px); }
 .button.ghost{
-  background:transparent; color:var(--accent); border:1px solid var(--border)
+  background:transparent;
+  color:var(--accent);
+  border:1px solid var(--border);
 }
 
 /* Card */
@@ -122,7 +152,7 @@ input, textarea, select{
 }
 input:focus, textarea:focus, select:focus{
   border-color:var(--accent);
-  box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent)
+  box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
 }
 
 /* Media helpers */
@@ -134,9 +164,16 @@ input:focus, textarea:focus, select:focus{
 }
 
 /* Simple grid */
-.row{display:grid; gap:var(--space)}
-.row.two{grid-template-columns:1fr 1fr}
-@media (max-width:700px){ .row.two{grid-template-columns:1fr} }
+.row{ display:grid; gap:var(--space); }
+.row.two{ grid-template-columns:1fr 1fr; }
+@media (max-width:700px){
+  .row.two{ grid-template-columns:1fr; }
+}
 
 /* Footer spacing */
-hr{border:0; border-top:1px solid var(--border); margin:2rem 0; opacity:.6}
+hr{
+  border:0;
+  border-top:1px solid var(--border);
+  margin:2rem 0;
+  opacity:.6;
+}
