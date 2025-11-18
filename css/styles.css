@@ -9,7 +9,7 @@
   --border: #242a33;
 
   /* Type & rhythm */
-  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --base: 16px;
   --radius: 10px;
@@ -17,28 +17,29 @@
   --space: 1rem;
   --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
-  /* Background image & overlays */
-  --bg-image: url('images/bg.jpeg'); /* dark mode default */
-  --bg-opacity: 0.25;
-  --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
+  /* Background image & overlays
+     NOTE: default is now the LIGHT image so you will immediately see it */
+  --bg-image: url('images/bg.jpeg'); /* <-- light image as default */
+  --bg-opacity: 0.12;
+  --bg-tint: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(250,250,250,0.45));
 }
 
-/* Light mode override */
-@media (prefers-color-scheme: light){
+/* If the user prefers dark mode, switch to the dark photo & tint */
+@media (prefers-color-scheme: dark){
   :root{
-    --bg: #fafbff;
-    --fg: #0e1320;
-    --muted: #566074;
-    --accent: #315efb;
-    --accent-2: #2f9e44;
-    --surface: #ffffff;
-    --border: #e6e9f2;
-    --shadow: 0 6px 20px rgba(0,0,0,0.08);
+    --bg: #0f1115;
+    --fg: #e8eaf0;
+    --muted: #a6adbb;
+    --accent: #7aa2f7;
+    --accent-2: #9ece6a;
+    --surface: #171a21;
+    --border: #242a33;
+    --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
-    /* Light background image + softer presence */
-    --bg-image: url('images/bg.jpeg');
-    --bg-opacity: 0.06;
-    --bg-tint: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(250,250,250,0.45));
+    /* dark background image + stronger presence */
+    --bg-image: url('images/website_saheb.jpg');
+    --bg-opacity: 0.25;
+    --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
   }
 }
 
@@ -69,6 +70,7 @@ body::before{
   opacity: var(--bg-opacity);
   pointer-events:none;
   z-index:0;
+  transition: opacity .25s ease, filter .25s ease;
 }
 
 /* Ensure content is above the background layer */
@@ -166,9 +168,7 @@ input:focus, textarea:focus, select:focus{
 /* Simple grid */
 .row{ display:grid; gap:var(--space); }
 .row.two{ grid-template-columns:1fr 1fr; }
-@media (max-width:700px){
-  .row.two{ grid-template-columns:1fr; }
-}
+@media (max-width:700px){ .row.two{ grid-template-columns:1fr; } }
 
 /* Footer spacing */
 hr{
