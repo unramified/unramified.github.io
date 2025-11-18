@@ -19,7 +19,7 @@
 
   /* Background image & overlays
      NOTE: default is now the LIGHT image so you will immediately see it */
-  --bg-image: url('images/bg.jpeg'); /* <-- light image as default */
+  --bg-image: url('images/blackboard.jpg'); /* <-- light image as default */
   --bg-opacity: 0.12;
   --bg-tint: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(250,250,250,0.45));
 }
@@ -37,7 +37,7 @@
     --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
     /* dark background image + stronger presence */
-    --bg-image: url('images/website_saheb.jpg');
+    --bg-image: url('images/blackboard.jpg');
     --bg-opacity: 0.25;
     --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
   }
