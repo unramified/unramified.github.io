@@ -177,3 +177,36 @@ hr{
   margin:2rem 0;
   opacity:.6;
 }
+
+/* Profile photo in header */
+.hero-header{
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space);
+  margin-bottom: 1.5rem;
+}
+
+.profile-img{
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.header-text{
+  flex: 1;
+}
+
+/* Mobile: stack photo above text */
+@media (max-width: 700px){
+  .hero-header{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
