@@ -1,3 +1,4 @@
+```css
 :root{
   /* Palette */
   --bg: #0f1115;
@@ -17,14 +18,13 @@
   --space: 1rem;
   --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
-  /* Background image & overlays
-     NOTE: default is now the LIGHT image so you will immediately see it */
-  --bg-image: url('images/blackboard.jpg'); /* <-- light image as default */
-  --bg-opacity: 0.12;
-  --bg-tint: linear-gradient(135deg, rgba(255,255,255,0.55), rgba(250,250,250,0.45));
+  /* Background image & overlays */
+  --bg-image: url('images/blackboard.jpg');
+  --bg-opacity: 0.25;
+  --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
 }
 
-/* If the user prefers dark mode, switch to the dark photo & tint */
+/* If the user prefers dark mode */
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #0f1115;
@@ -36,7 +36,6 @@
     --border: #242a33;
     --shadow: 0 6px 20px rgba(0,0,0,0.35);
 
-    /* dark background image + stronger presence */
     --bg-image: url('images/blackboard.jpg');
     --bg-opacity: 0.25;
     --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
@@ -57,6 +56,12 @@ body{
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   position: relative;
+}
+
+/* Make all images behave nicely by default */
+img{
+  max-width: 100%;
+  height: auto;
 }
 
 /* Background image layer */
@@ -93,6 +98,7 @@ h2{ font-size:clamp(1.5rem, 3vw, 2rem); }
 h3{ font-size:clamp(1.25rem, 2.2vw, 1.5rem); }
 p{ margin:0 0 1em; }
 small,.muted{ color:var(--muted); }
+
 code,kbd,pre{
   font-family:var(--mono);
   background:var(--surface);
@@ -168,7 +174,9 @@ input:focus, textarea:focus, select:focus{
 /* Simple grid */
 .row{ display:grid; gap:var(--space); }
 .row.two{ grid-template-columns:1fr 1fr; }
-@media (max-width:700px){ .row.two{ grid-template-columns:1fr; } }
+@media (max-width:700px){
+  .row.two{ grid-template-columns:1fr; }
+}
 
 /* Footer spacing */
 hr{
@@ -178,45 +186,38 @@ hr{
   opacity:.6;
 }
 
-/* Profile photo in header */
+/* Header with profile photo */
 .hero-header{
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space);
-  margin-bottom: 1.5rem;
+  display:flex;
+  align-items:flex-start;
+  gap:var(--space);
+  margin-bottom:1.5rem;
 }
-
-.profile-img{
-  width: 64px;
-  height: 64px;
-  flex-shrink: 0;
-  border-radius: 8px;   /* square (slightly rounded) */
-  object-fit: cover;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow);
-  background: var(--surface);
-}
-
 
 .header-text{
-  flex: 1;
+  flex:1;
+}
+
+/* Force SMALL profile image (this is the important part) */
+.hero-header img.profile-img{
+  width: 32px !important;
+  height: 32px !important;
+  max-width: 32px !important;
+  max-height: 32px !important;
+  object-fit: cover !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: var(--shadow) !important;
+  background: var(--surface) !important;
+  display: block !important;
+  flex-shrink: 0 !important;
 }
 
 /* Mobile: stack photo above text */
-@media (max-width: 700px){
+@media (max-width:700px){
   .hero-header{
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
   }
-}
-
-img.profile-img{
-  width: 48px !important;
-  height: 48px !important;
-  max-width: 48px !important;
-  max-height: 48px !important;
-  object-fit: cover !important;
-  border-radius: 6px !important;
-  display: block;
 }
