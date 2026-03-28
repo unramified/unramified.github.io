@@ -1,5 +1,4 @@
 :root{
-  /* Palette */
   --bg: #0f1115;
   --fg: #e8eaf0;
   --muted: #a6adbb;
@@ -7,8 +6,6 @@
   --accent-2: #9ece6a;
   --surface: #171a21;
   --border: #242a33;
-
-  /* Type & rhythm */
   --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --base: 16px;
@@ -16,14 +13,11 @@
   --line: 1.6;
   --space: 1rem;
   --shadow: 0 6px 20px rgba(0,0,0,0.35);
-
-  /* Background image & overlays */
   --bg-image: url('images/blackboard.jpg');
   --bg-opacity: 0.25;
   --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
 }
 
-/* If the user prefers dark mode */
 @media (prefers-color-scheme: dark){
   :root{
     --bg: #0f1115;
@@ -34,17 +28,15 @@
     --surface: #171a21;
     --border: #242a33;
     --shadow: 0 6px 20px rgba(0,0,0,0.35);
-
     --bg-image: url('images/blackboard.jpg');
     --bg-opacity: 0.25;
     --bg-tint: linear-gradient(135deg, rgba(122,162,247,0.20), rgba(158,206,106,0.20));
   }
 }
 
-/* Base */
 *{ box-sizing:border-box; }
 html{ font-size:var(--base); }
-html, body { height: 100%; position: relative; }
+html, body{ height:100%; position:relative; }
 
 body{
   margin:0;
@@ -54,16 +46,14 @@ body{
   line-height:var(--line);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  position: relative;
+  position:relative;
 }
 
-/* Make all images behave nicely by default */
 img{
-  max-width: 100%;
-  height: auto;
+  max-width:100%;
+  height:auto;
 }
 
-/* Background image layer */
 body::before{
   content:"";
   position:fixed;
@@ -71,23 +61,20 @@ body::before{
   background:
     var(--bg-tint),
     var(--bg-image) center/cover no-repeat;
-  opacity: var(--bg-opacity);
+  opacity:var(--bg-opacity);
   pointer-events:none;
   z-index:0;
   transition: opacity .25s ease, filter .25s ease;
 }
 
-/* Ensure content is above the background layer */
-main, .container, header, section, footer { position: relative; z-index:1; }
+main, .container, header, section, footer{ position:relative; z-index:1; }
 
-/* Layout */
 .container{
-  max-width: 720px;
-  margin: 0 auto;
-  padding: calc(var(--space)*1.5) var(--space);
+  max-width:720px;
+  margin:0 auto;
+  padding:calc(var(--space)*1.5) var(--space);
 }
 
-/* Type scale */
 h1,h2,h3,h4,h5,h6{
   margin:0 0 .5em;
   font-weight:700;
@@ -107,7 +94,6 @@ code,kbd,pre{
 code,kbd{ padding:.15em .4em; }
 pre{ padding:1rem; overflow:auto; }
 
-/* Links & buttons */
 a{
   color:var(--accent);
   text-decoration:none;
@@ -116,6 +102,7 @@ a:hover{
   opacity:.85;
   text-decoration:underline;
 }
+
 .button{
   display:inline-block;
   padding:.6rem 1rem;
@@ -138,16 +125,14 @@ a:hover{
   border:1px solid var(--border);
 }
 
-/* Card */
 .card{
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:var(--radius);
-  padding: calc(var(--space)*1.25);
-  box-shadow: var(--shadow);
+  padding:calc(var(--space)*1.25);
+  box-shadow:var(--shadow);
 }
 
-/* Forms */
 input, textarea, select{
   width:100%;
   padding:.65rem .8rem;
@@ -162,7 +147,6 @@ input:focus, textarea:focus, select:focus{
   box-shadow:0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
 }
 
-/* Media helpers */
 .img{
   display:block;
   max-width:100%;
@@ -170,14 +154,12 @@ input:focus, textarea:focus, select:focus{
   border-radius:8px;
 }
 
-/* Simple grid */
 .row{ display:grid; gap:var(--space); }
 .row.two{ grid-template-columns:1fr 1fr; }
 @media (max-width:700px){
   .row.two{ grid-template-columns:1fr; }
 }
 
-/* Footer spacing */
 hr{
   border:0;
   border-top:1px solid var(--border);
@@ -185,7 +167,7 @@ hr{
   opacity:.6;
 }
 
-/* Header with profile photo */
+/* Hero Header */
 .hero-header{
   display:flex;
   align-items:flex-start;
@@ -197,22 +179,20 @@ hr{
   flex:1;
 }
 
-/* Force SMALL profile image (this is the important part) */
+/* Profile Image */
 .hero-header img.profile-img{
-  width: 32px !important;
-  height: 32px !important;
-  max-width: 32px !important;
-  max-height: 32px !important;
-  object-fit: cover !important;
-  border-radius: 6px !important;
-  border: 1px solid var(--border) !important;
-  box-shadow: var(--shadow) !important;
-  background: var(--surface) !important;
-  display: block !important;
-  flex-shrink: 0 !important;
+  width:80px;
+  height:80px;
+  object-fit:cover;
+  border-radius:50%;
+  border:2px solid var(--border);
+  box-shadow:var(--shadow);
+  background:var(--surface);
+  display:block;
+  flex-shrink:0;
 }
 
-/* Mobile: stack photo above text */
+/* Mobile */
 @media (max-width:700px){
   .hero-header{
     flex-direction:column;
