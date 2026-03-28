@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Saheb</title>
   <link rel="stylesheet" href="styles.css">
-
-  <!-- MathJax (minimal) -->
   <script>
     window.MathJax = { tex: { inlineMath: [['\$$','\$$']], displayMath: [['$$','$$']], processEscapes: true } };
   </script>
@@ -17,8 +15,7 @@
   <main class="container">
     <header class="hero-header">
 
-      <!-- YOUR PHOTO — place your image in images/saheb.jpg -->
-      <img src="images/saheb.jpeg" alt="Saheb Mohapatra" class="profile-img">
+      <img src="images/saheb.jpeg" id="profile-pic" alt="Saheb Mohapatra">
 
       <div class="header-text">
         <h1>Hi! My name is Saheb.</h1>
@@ -34,6 +31,66 @@
       <p>Interested in connections between Bloch groups and Algebraic K-theory, motives.</p>
     </section>
 
+    <section>
+      <h2>Pre-prints/Publications</h2>
+      <ul>
+        <li><a href="http://arxiv.org/abs/2512.17118">Bloch-Suslin Complex and Strong A1-invariance</a>, Dec 2025</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Seminars/Reading Groups</h2>
+      <ul>
+        <li>K-theory seminar at Durham University organised by Herbert Gangl</li>
+        <li>Elliptic curves reading group at Durham University [<a href="https://drive.google.com/drive/folders/15-RrVc-wYw8dZbIRpu6F5MldtXMf_pKW?usp=sharing">NOTES</a>]</li>
+        <li>Algebraic geometry seminar at ISI organised by Utsav Choudhury [<a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html">LINK</a>]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Conferences/Training Schools</h2>
+      <ul>
+        <li>Recent Advances in Motivic Cohomology at Osnabrück University, March 2026</li>
+        <li>Étale homotopy theory at Heidelberg University, March 2026 [<a href="https://drive.google.com/file/d/1DGOUog7cgBvG4nDgc0NRwnNlp_XKveOQ/view?usp=sharing">LINK</a>]</li>
+        <li>Motives in Montpellier Winter School at IMAG, Jan 2026 [<a href="https://imag.umontpellier.fr/~tomic/school2026/photo.jpeg">LINK</a>]</li>
+        <li>COGENT Winter School at Galway University, Dec 2025 [<a href="https://drive.google.com/file/d/1LqOGIjHqFmpA4lr3p5ozOD6VCY7A5Nvd/view?usp=sharing">LINK</a>]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Notes/Presentations</h2>
+      <ul>
+        <li>"The five-term relation" (Coming soon)</li>
+        <li>"+ Construction" at K-theory reading group at IMSc, India (June, 2024) [<a href="https://drive.google.com/file/d/1HeaX2NfTAKQFAkdwDslZDJ6fdr7K_80g/view?usp=sharing">LINK</a>]</li>
+        <li>"Flatness and Tor" (Presentation at VSRP-2022, TIFR, India) [<a href="https://drive.google.com/file/d/1nfVNp1C1YqW178c_dI460J3CvsP7ANls/view?usp=sharing">LINK</a>]</li>
+        <li>"Education in the era of COVID-19" (Statistics project at ISI Bangalore) (Nov, 2021) [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">LINK</a>]</li>
+        <li>"Unique Euclidean domains" at ISI Bangalore (Aug, 2021) [<a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing">LINK</a>]</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Useful links</h2>
+      <p class="muted">Coming soon.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>E-mail: saheb.mohapatra.math@gmail.com; saheb.mohapatra@durham.ac.uk</p>
+      <p>Office: 3047, Mathematical Sciences and Computer Science Building, Upper Mountjoy, Durham University, DH1 2LE, United Kingdom</p>
+    </section>
+
+    <hr>
+
+    <footer>
+      <small class="muted">© <span id="y"></span> Saheb Mohapatra</small>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
     <section>
       <h2>Pre-prints/Publications</h2>
       <ul>
