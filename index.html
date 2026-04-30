@@ -9,14 +9,72 @@
     window.MathJax = { tex: { inlineMath: [['\$$','\$$']], displayMath: [['$$','$$']], processEscapes: true } };
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+  <style>
+    section h2 {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin-bottom: 0.65rem;
+    }
+    section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    section ul li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding-left: 1rem;
+      position: relative;
+      color: var(--fg);
+    }
+    section ul li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+    }
+    .tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-left: 0.3rem;
+      text-decoration: none;
+    }
+    .tag:hover { color: var(--accent); opacity: 1; }
+    .year {
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-left: 0.3rem;
+    }
+    section { margin-bottom: 1.75rem; }
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      font-size: 0.9rem;
+    }
+    .contact-row .addr { color: var(--muted); margin-top: 0.2rem; }
+    .flagcounter { margin-top: 0.5rem; opacity: 0.65; }
+    footer { font-size: 0.8rem; }
+    .hero-header {
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 1.75rem;
+    }
+    .hero-header h1 { font-size: 1.15rem; margin-bottom: 0.3rem; }
+    .header-text p { font-size: 0.9rem; margin: 0; }
+  </style>
 </head>
-
 <body>
   <main class="container">
+
     <header class="hero-header">
-
-      <img src="images/saheb.jpeg" alt="Saheb Mohapatra" style="width:80px;height:80px;min-width:80px;max-width:80px;min-height:80px;max-height:80px;object-fit:cover;border-radius:50%;border:2px solid #242a33;box-shadow:0 6px 20px rgba(0,0,0,0.35);display:block;flex-shrink:0;">
-
+      <img id="profile-pic" src="images/saheb.jpeg" alt="Saheb Mohapatra">
       <div class="header-text">
         <h1>Hi! My name is Saheb.</h1>
         <p class="muted">
@@ -28,73 +86,74 @@
 
     <section>
       <h2>Research interest</h2>
-      <p>Interested in connections between Bloch groups and Algebraic K-theory, motives.</p>
+      <p style="font-size:0.9rem;margin:0;">Interested in connections between Bloch groups and Algebraic K-theory, motives.</p>
     </section>
 
     <section>
-      <h2>Pre-prints/Publications</h2>
+      <h2>Pre-prints / Publications</h2>
       <ul>
-        <li><a href="http://arxiv.org/abs/2512.17118">Bloch-Suslin Complex and Strong A1-invariance</a>, Dec 2025</li>
+        <li>
+          <a href="http://arxiv.org/abs/2512.17118">Bloch-Suslin Complex and Strong A¹-invariance</a><span class="year">Dec 2025</span>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Seminars/Reading Groups</h2>
+      <h2>Notes / Presentations</h2>
       <ul>
-        <li>K-theory seminar at Durham University organised by Herbert Gangl</li>
-        <li>Elliptic curves reading group at Durham University [<a href="https://drive.google.com/drive/folders/15-RrVc-wYw8dZbIRpu6F5MldtXMf_pKW?usp=sharing">NOTES</a>]</li>
-        <li>Algebraic geometry seminar at ISI organised by Utsav Choudhury [<a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html">LINK</a>]</li>
+        <li>"Borel Regulators" at COGENT seminar, Durham University<span class="year">Apr 2026</span> <a class="tag" href="https://drive.google.com/file/d/1zTBW9EexrKRdVQ2lQiBsDmsiWC_5DqNP/view?usp=sharing">[link]</a></li>
+        <li>"+ Construction" at K-theory reading group, IMSc India<span class="year">Jun 2024</span> <a class="tag" href="https://drive.google.com/file/d/1HeaX2NfTAKQFAkdwDslZDJ6fdr7K_80g/view?usp=sharing">[link]</a></li>
+        <li>"Flatness and Tor" at VSRP-2022, TIFR India <a class="tag" href="https://drive.google.com/file/d/1nfVNp1C1YqW178c_dI460J3CvsP7ANls/view?usp=sharing">[link]</a></li>
+        <li>"Education in the era of COVID-19", statistics project at ISI Bangalore<span class="year">Nov 2021</span> <a class="tag" href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">[link]</a></li>
+        <li>"Unique Euclidean domains" at ISI Bangalore<span class="year">Aug 2021</span> <a class="tag" href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWBPEFB-NTLOoaOQm/view?usp=sharing">[link]</a></li>
       </ul>
     </section>
 
     <section>
-      <h2>Conferences/Training Schools</h2>
+      <h2>Conferences / Training schools</h2>
       <ul>
-        <li>Recent Advances in Motivic Cohomology at Osnabrück University, March 2026</li>
-        <li>Étale homotopy theory at Heidelberg University, March 2026 [<a href="https://drive.google.com/file/d/1DGOUog7cgBvG4nDgc0NRwnNlp_XKveOQ/view?usp=sharing">LINK</a>]</li>
-        <li>Motives in Montpellier Winter School at IMAG, Jan 2026 [<a href="https://imag.umontpellier.fr/~tomic/school2026/photo.jpeg">LINK</a>]</li>
-        <li>COGENT Winter School at Galway University, Dec 2025 [<a href="https://drive.google.com/file/d/1LqOGIjHqFmpA4lr3p5ozOD6VCY7A5Nvd/view?usp=sharing">LINK</a>]</li>
+        <li>Recent Advances in Motivic Cohomology, Osnabrück University<span class="year">Mar 2026</span></li>
+        <li>Étale homotopy theory, Heidelberg University<span class="year">Mar 2026</span> <a class="tag" href="https://drive.google.com/file/d/1DGOUog7cgBvG4nDgc0NRwnNlp_XKveOQ/view?usp=sharing">[link]</a></li>
+        <li>Motives in Montpellier Winter School, IMAG<span class="year">Jan 2026</span> <a class="tag" href="https://imag.umontpellier.fr/~tomic/school2026/photo.jpeg">[link]</a></li>
+        <li>COGENT Winter School, Galway University<span class="year">Dec 2025</span> <a class="tag" href="https://drive.google.com/file/d/1LqOGIjHqFmpA4lr3p5ozOD6VCY7A5Nvd/view?usp=sharing">[link]</a></li>
       </ul>
     </section>
 
     <section>
-      <h2>Notes/Presentations</h2>
+      <h2>Seminars / Reading groups</h2>
       <ul>
-        <li>"Borel Regulators" at COGENT seminar at Durham University (April, 2026) [<a href = "https://drive.google.com/file/d/1zTBW9EexrKRdVQ2lQiBsDmsiWC_5DqNP/view?usp=sharing">LINK</a>]</li>
-        <li>"+ Construction" at K-theory reading group at IMSc, India (June, 2024) [<a href="https://drive.google.com/file/d/1HeaX2NfTAKQFAkdwDslZDJ6fdr7K_80g/view?usp=sharing">LINK</a>]</li>
-        <li>"Flatness and Tor" (Presentation at VSRP-2022, TIFR, India) [<a href="https://drive.google.com/file/d/1nfVNp1C1YqW178c_dI460J3CvsP7ANls/view?usp=sharing">LINK</a>]</li>
-        <li>"Education in the era of COVID-19" (Statistics project at ISI Bangalore) (Nov, 2021) [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">LINK</a>]</li>
-        <li>"Unique Euclidean domains" at ISI Bangalore (Aug, 2021) [<a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing">LINK</a>]</li>
+        <li>K-theory seminar at Durham University, organised by Herbert Gangl</li>
+        <li>Elliptic curves reading group at Durham University <a class="tag" href="https://drive.google.com/drive/folders/15-RrVc-wYw8dZbIRpu6F5MldtXMf_pKW?usp=sharing">[notes]</a></li>
+        <li>Algebraic geometry seminar at ISI, organised by Utsav Choudhury <a class="tag" href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html">[link]</a></li>
       </ul>
     </section>
 
     <section>
       <h2>Useful links</h2>
-      <p class="muted">Coming soon.</p>
+      <p style="font-size:0.9rem;color:var(--muted);margin:0;">Coming soon.</p>
     </section>
 
     <section>
       <h2>Contact</h2>
-      <p>E-mail: saheb.mohapatra.math@gmail.com; saheb.mohapatra@durham.ac.uk</p>
-      <p>Office: 3047, Mathematical Sciences and Computer Science Building, Upper Mountjoy, Durham University, DH1 2LE, United Kingdom</p>
+      <div class="contact-row">
+        <span><a href="mailto:saheb.mohapatra.math@gmail.com">saheb.mohapatra.math@gmail.com</a></span>
+        <span><a href="mailto:saheb.mohapatra@durham.ac.uk">saheb.mohapatra@durham.ac.uk</a></span>
+        <span class="addr">3047, Mathematical Sciences and Computer Science Building, Upper Mountjoy, Durham University, DH1 2LE, United Kingdom</span>
+      </div>
     </section>
 
-    <section>
-  <h2> </h2>
-  <div style="text-align:center;">
-    <a href="https://info.flagcounter.com/q9jT" target="_blank">
-      <img src="https://s01.flagcounter.com/countxl/q9jT/bg_D5DED8/txt_000000/border_CC1E0A/columns_5/maxflags_17/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" style="border:0;">
-    </a>
-  </div>
-</section>
+    <div class="flagcounter">
+      <a href="https://info.flagcounter.com/q9jT" target="_blank">
+        <img src="https://s01.flagcounter.com/countxl/q9jT/bg_D5DED8/txt_000000/border_CC1E0A/columns_5/maxflags_17/viewers_0/labels_0/pageviews_1/flags_0/percent_0/" alt="Flag Counter" style="border:0;">
+      </a>
+    </div>
 
     <hr>
-
     <footer>
       <small class="muted">© <span id="y"></span> Saheb Mohapatra</small>
     </footer>
-  </main>
 
+  </main>
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
