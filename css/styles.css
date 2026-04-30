@@ -49,7 +49,7 @@ body{
   position:relative;
 }
 
-img{
+img:not(#profile-pic){
   max-width:100%;
   height:auto;
 }
