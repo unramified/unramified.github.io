@@ -181,19 +181,19 @@ hr{
 
 /* Profile Image */
 #profile-pic {
-  width: 80px !important;
-  height: 80px !important;
-  min-width: 80px !important;
-  min-height: 80px !important;
-  max-width: 80px !important;
-  max-height: 80px !important;
-  object-fit: cover !important;
-  border-radius: 50% !important;
-  border: 2px solid var(--border) !important;
-  box-shadow: var(--shadow) !important;
-  background: var(--surface) !important;
-  display: block !important;
-  flex-shrink: 0 !important;
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  box-shadow: var(--shadow);
+  background: var(--surface);
+  display: block;
+  flex-shrink: 0;
 }
 
 /* Mobile */
