@@ -142,17 +142,13 @@ h1{
 
 h2{
   margin-bottom:0;
-  color:var(--neon-blue);
+  color:#efffff;
   font-size:0.9rem;
   line-height:1.35;
   text-transform:uppercase;
-  background:linear-gradient(90deg, var(--neon-blue), var(--neon-violet));
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
   text-shadow:
-    0 0 8px rgba(85,183,255,0.62),
-    0 0 22px rgba(182,108,255,0.34);
+    0 0 8px rgba(125,255,232,0.52),
+    0 0 20px rgba(85,183,255,0.28);
 }
 
 h2::after{
@@ -162,10 +158,10 @@ h2::after{
   height:2px;
   margin-top:0.65rem;
   border-radius:999px;
-  background:linear-gradient(90deg, var(--neon-blue), var(--neon-violet));
+  background:linear-gradient(90deg, #efffff, var(--neon-aqua));
   box-shadow:
-    0 0 12px rgba(85,183,255,0.64),
-    0 0 18px rgba(182,108,255,0.38);
+    0 0 12px rgba(125,255,232,0.56),
+    0 0 18px rgba(85,183,255,0.28);
 }
 
 h3{
@@ -265,8 +261,8 @@ li::before{
   width:7px;
   height:7px;
   border-radius:50%;
-  background:linear-gradient(135deg, var(--neon-blue), var(--neon-violet));
-  box-shadow:0 0 20px rgba(85,183,255,0.38);
+  background:linear-gradient(135deg, #efffff, var(--neon-aqua));
+  box-shadow:0 0 20px rgba(125,255,232,0.34);
 }
 
 li:first-child::before{
