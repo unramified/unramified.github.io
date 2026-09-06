@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;760&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="css/styles.css">
+
   <script>
     window.MathJax = {
       tex: {
@@ -19,100 +20,161 @@
       }
     };
   </script>
+
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
+
 <body>
   <main class="container">
     <header class="hero-header">
-      <img id="profile-pic" src="images/ss.jpg" alt="Saheb Mohapatra">
+      <div class="profile-pic-frame">
+        <img id="profile-pic" src="images/ss.jpg" alt="Saheb Mohapatra">
+      </div>
+
       <div class="header-text">
         <h1>Hi! My name is Saheb.</h1>
+
         <p class="muted">
-          Marie-Curie fellow in the <a href="https://www.cogent-network.eu">COGENT</a> doctoral network.
+          Marie-Curie fellow in the
+          <a href="https://www.cogent-network.eu">COGENT</a>
+          doctoral network.
           <a href="https://drive.google.com/file/d/1euKcgrxL6vuuCZSyEakDnUwCU66EySH6/view?usp=sharing">My CV</a>.
         </p>
       </div>
     </header>
 
-    <section>
-      <h2>Research Interests</h2>
-      <div class="section-body">
-        <p>Interested in applications of polylogarithms to post-quantum cryptography.</p>
-      </div>
-    </section>
+    <div class="site-accordion">
+      <details class="site-section">
+        <summary>
+          <h2>Research Interests</h2>
+        </summary>
 
-    <section>
-      <h2>Preprints and Publications</h2>
-      <div class="section-body">
-        <ul>
-          <li><a href="https://arxiv.org/abs/2512.17118">Bloch-Suslin Complex and Strong A1-invariance</a>, Dec 2025</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Contributed Talks</h2>
-      <div class="section-body">
-        <ul>
-          <li>Y-RANT VIII conference at Bristol University [<a href="https://drive.google.com/file/d/1XVcEdezXXpPs2fgryL2ad8y9hY7vGc4b/view?usp=sharing">SLIDES</a>]</li>
-            <li>K-theory seminar at Durham University organised by Herbert Gangl</li>
-          <li>Elliptic curves reading group at Durham University [<a href="https://drive.google.com/drive/folders/15-RrVc-wYw8dZbIRpu6F5MldtXMf_pKW?usp=sharing">NOTES</a>]</li>
-          <li>Algebraic geometry seminar at ISI organised by Utsav Choudhury [<a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html">LINK</a>]</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Conferences and Training Schools</h2>
-      <div class="section-body">
-        <ul>
-          <li>Y-RANT VIII conference at Bristol University, September 2026 [<a href="">PHOTO</a>]</li>
-          <li>"EnCounteRs with Don" at Durham University, June 2026 [<a href="https://drive.google.com/file/d/1BBcehwSbWGGBGbZnlyjYSLOSZLR1JZ_N/view?usp=sharing">PHOTO</a>]</li>
-          <li>Recent Advances in Motivic Cohomology at Osnabrück University, March 2026</li>
-          <li>Étale homotopy theory at Heidelberg University, March 2026 [<a href="https://drive.google.com/file/d/1DGOUog7cgBvG4nDgc0NRwnNlp_XKveOQ/view?usp=sharing">PHOTO</a>]</li>
-          <li>Motives in Montpellier Winter School at IMAG, Jan 2026 [<a href="https://imag.umontpellier.fr/~tomic/school2026/photo.jpeg">PHOTO</a>]</li>
-          <li>COGENT Winter School at Galway University, Dec 2025 [<a href="https://drive.google.com/file/d/1LqOGIjHqFmpA4lr3p5ozOD6VCY7A5Nvd/view?usp=sharing">PHOTO</a>]</li>
-        </ul>
-      </div>
-    </section>
-
-    <section>
-      <h2>Notes and Presentations</h2>
-      <div class="section-body">
-        <ul>
-          <li> "Cryptographic applications of polylogarithmic groups" at Y-RANT VIII at Bristol University (September, 2026) [<a href="https://drive.google.com/file/d/1XVcEdezXXpPs2fgryL2ad8y9hY7vGc4b/view?usp=sharing">SLIDES</a>]</li>
-          <li>"Borel Regulators" at COGENT seminar at Durham University (April, 2026) [<a href="https://drive.google.com/file/d/1t3x6uV0Z5uVX---p53LQnMMm7sxh-wqG/view?usp=sharing">NOTES</a>]</li>
-          <li>"+ Construction" at K-theory reading group at IMSc, India (June, 2024) [<a href="https://drive.google.com/file/d/1HeaX2NfTAKQFAkdwDslZDJ6fdr7K_80g/view?usp=sharing">NOTES</a>]</li>
-          <li>"Flatness and Tor" (Presentation at VSRP-2022, TIFR, India) [<a href="https://drive.google.com/file/d/1nfVNp1C1YqW178c_dI460J3CvsP7ANls/view?usp=sharing">SLIDES</a>]</li>
-          <li>"Education in the era of COVID-19" (Statistics project at ISI Bangalore) (Nov, 2021) [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">REPORT</a>]</li>
-          <li>"Unique Euclidean domains" at ISI Bangalore (Aug, 2021) [<a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing">SLIDES</a>]</li>
-        </ul>
-      </div>
-    </section>
-
-
-
-    <section>
-      <h2>Contact</h2>
-      <div class="section-body contact">
-        <div class="contact-icons" aria-label="Contact links">
-          <a class="contact-icon work-email" href="mailto:saheb.mohapatra@durham.ac.uk" aria-label="Durham email">
-            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-          </a>
-          <a class="contact-icon gmail-email" href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Gmail">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-          </a>
-          <!--<a class="contact-icon linkedin" href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
-          </a>-->
-          <!--<a class="contact-icon instagram" href="https://instagram.com/saheb.mohapatra" target="_blank" rel="noopener" aria-label="Instagram">
-            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-          </a>-->
+        <div class="section-body">
+          <p>Interested in applications of polylogarithms to post-quantum cryptography.</p>
         </div>
-        <p>Office (Durham): 3047, Mathematical Sciences and Computer Science Building, Upper Mountjoy, Durham University, DH1 3LE, United Kingdom</p>
-        <p>Office (Grenoble): Bât., Aile C, Bureau 32, Institut Fourier - Université Grenoble Alpes, 100, Rue des Mathématiques, 38610 Gières, France</p>
-      </div>
-    </section>
+      </details>
+
+      <details class="site-section">
+        <summary>
+          <h2>Preprints and Publications</h2>
+        </summary>
+
+        <div class="section-body">
+          <ul>
+            <li>
+              <a href="https://arxiv.org/abs/2512.17118">Bloch-Suslin Complex and Strong A1-invariance</a>, Dec 2025
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="site-section">
+        <summary>
+          <h2>Contributed Talks</h2>
+        </summary>
+
+        <div class="section-body">
+          <ul>
+            <li>
+              Y-RANT VIII conference at Bristol University [<a href="https://drive.google.com/file/d/1XVcEdezXXpPs2fgryL2ad8y9hY7vGc4b/view?usp=sharing">SLIDES</a>]
+            </li>
+            <li>K-theory seminar at Durham University organised by Herbert Gangl</li>
+            <li>
+              Elliptic curves reading group at Durham University [<a href="https://drive.google.com/drive/folders/15-RrVc-wYw8dZbIRpu6F5MldtXMf_pKW?usp=sharing">NOTES</a>]
+            </li>
+            <li>
+              Algebraic geometry seminar at ISI organised by Utsav Choudhury [<a href="https://utsavchoudhury.weebly.com/algebraic-geometry-seminar.html">LINK</a>]
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="site-section">
+        <summary>
+          <h2>Conferences and Training Schools</h2>
+        </summary>
+
+        <div class="section-body">
+          <ul>
+            <li>
+              Y-RANT VIII conference at Bristol University, September 2026 [<a href="">PHOTO</a>]
+            </li>
+            <li>
+              "EnCounteRs with Don" at Durham University, June 2026 [<a href="https://drive.google.com/file/d/1BBcehwSbWGGBGbZnlyjYSLOSZLR1JZ_N/view?usp=sharing">PHOTO</a>]
+            </li>
+            <li>Recent Advances in Motivic Cohomology at Osnabrück University, March 2026</li>
+            <li>
+              Étale homotopy theory at Heidelberg University, March 2026 [<a href="https://drive.google.com/file/d/1DGOUog7cgBvG4nDgc0NRwnNlp_XKveOQ/view?usp=sharing">PHOTO</a>]
+            </li>
+            <li>
+              Motives in Montpellier Winter School at IMAG, Jan 2026 [<a href="https://imag.umontpellier.fr/~tomic/school2026/photo.jpeg">PHOTO</a>]
+            </li>
+            <li>
+              COGENT Winter School at Galway University, Dec 2025 [<a href="https://drive.google.com/file/d/1LqOGIjHqFmpA4lr3p5ozOD6VCY7A5Nvd/view?usp=sharing">PHOTO</a>]
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="site-section">
+        <summary>
+          <h2>Notes and Presentations</h2>
+        </summary>
+
+        <div class="section-body">
+          <ul>
+            <li>
+              "Cryptographic applications of polylogarithmic groups" at Y-RANT VIII at Bristol University (September, 2026) [<a href="https://drive.google.com/file/d/1XVcEdezXXpPs2fgryL2ad8y9hY7vGc4b/view?usp=sharing">SLIDES</a>]
+            </li>
+            <li>
+              "Borel Regulators" at COGENT seminar at Durham University (April, 2026) [<a href="https://drive.google.com/file/d/1t3x6uV0Z5uVX---p53LQnMMm7sxh-wqG/view?usp=sharing">NOTES</a>]
+            </li>
+            <li>
+              "+ Construction" at K-theory reading group at IMSc, India (June, 2024) [<a href="https://drive.google.com/file/d/1HeaX2NfTAKQFAkdwDslZDJ6fdr7K_80g/view?usp=sharing">NOTES</a>]
+            </li>
+            <li>
+              "Flatness and Tor" (Presentation at VSRP-2022, TIFR, India) [<a href="https://drive.google.com/file/d/1nfVNp1C1YqW178c_dI460J3CvsP7ANls/view?usp=sharing">SLIDES</a>]
+            </li>
+            <li>
+              "Education in the era of COVID-19" (Statistics project at ISI Bangalore) (Nov, 2021) [<a href="https://www.isibang.ac.in/~rsen/Stat1/7.pdf">REPORT</a>]
+            </li>
+            <li>
+              "Unique Euclidean domains" at ISI Bangalore (Aug, 2021) [<a href="https://drive.google.com/file/d/1cuxiLTUeaTFmRtnUrWPEFB-NTLOoaOQm/view?usp=sharing">SLIDES</a>]
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="site-section">
+        <summary>
+          <h2>Contact</h2>
+        </summary>
+
+        <div class="section-body contact">
+          <div class="contact-icons" aria-label="Contact links">
+            <a class="contact-icon work-email" href="mailto:saheb.mohapatra@durham.ac.uk" aria-label="Durham email">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            </a>
+
+            <a class="contact-icon gmail-email" href="mailto:saheb.mohapatra.math@gmail.com" aria-label="Gmail">
+              <i class="fa-brands fa-google" aria-hidden="true"></i>
+            </a>
+
+            <!--<a class="contact-icon linkedin" href="https://linkedin.com/in/saheb-mohapatra-5257aa2b1" target="_blank" rel="noopener" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+            </a>-->
+
+            <!--<a class="contact-icon instagram" href="https://instagram.com/saheb.mohapatra" target="_blank" rel="noopener" aria-label="Instagram">
+              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+            </a>-->
+          </div>
+
+          <p>Office (Durham): 3047, Mathematical Sciences and Computer Science Building, Upper Mountjoy, Durham University, DH1 3LE, United Kingdom</p>
+
+          <p>Office (Grenoble): Bât., Aile C, Bureau 32, Institut Fourier - Université Grenoble Alpes, 100, Rue des Mathématiques, 38610 Gières, France</p>
+        </div>
+      </details>
+    </div>
 
     <section class="counter-section" aria-label="Visitor counter">
       <div class="flag-counter">
@@ -123,9 +185,12 @@
     </section>
 
     <footer>
-      <small class="muted">© <span id="y"></span> Saheb Mohapatra</small>
+      <small class="muted">
+        © <span id="y"></span> Saheb Mohapatra
+      </small>
     </footer>
   </main>
+
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
