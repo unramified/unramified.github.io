@@ -120,7 +120,7 @@ body::after{
   display:block;
   object-fit:cover;
   object-position:43% 50%;
-  transform:scale(1.2);
+  transform:scale(1.12);
   transform-origin:50% 53%;
 }
 
